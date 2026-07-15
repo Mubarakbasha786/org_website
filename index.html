@@ -503,6 +503,8 @@
   .integration-col:first-child .integration-chip:hover { transform: translateX(4px); border-color: var(--border-hover); box-shadow: var(--shadow-card); }
   .integration-col:last-child .integration-chip:hover { transform: translateX(-4px); border-color: var(--border-hover); box-shadow: var(--shadow-card); }
   .integration-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--ic, var(--primary)); flex-shrink: 0; }
+  .integration-icon { width: 26px; height: 26px; border-radius: 8px; background: var(--primary-glow); color: var(--primary); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .integration-icon svg { width: 14px; height: 14px; }
   .integration-hub-col { display: flex; flex-direction: column; align-items: center; gap: 14px; }
   .integration-hub {
     width: 92px; height: 92px; border-radius: 50%;
@@ -1245,7 +1247,7 @@
     <div class="section-head center">
       <span class="label reveal">Integrations</span>
       <h2 class="reveal">Zoho, connected to everything else you run</h2>
-      <p class="lead reveal mt-4">Your Zoho suite doesn't operate in isolation. We build the bridges to the tools your teams already use.</p>
+      <p class="lead reveal mt-4">Your Zoho suite doesn't operate in isolation. Wherever your data lives, we build the bridge — any Zoho app, connected to any third-party platform.</p>
     </div>
     <div class="integration-panel">
       <div class="integration-col reveal">
@@ -1262,20 +1264,15 @@
         <div class="flow-line rev"></div>
       </div>
       <div class="integration-col reveal">
-        <span class="integration-col-title">Third-Party Platforms</span>
-        <div class="integration-chip"><span class="integration-dot" style="--ic:#00875A"></span>Microsoft 365</div>
-        <div class="integration-chip"><span class="integration-dot" style="--ic:#0063D1"></span>Google Workspace</div>
-        <div class="integration-chip"><span class="integration-dot" style="--ic:#25d366"></span>WhatsApp Business</div>
-        <div class="integration-chip"><span class="integration-dot" style="--ic:#95BF47"></span>Shopify</div>
-        <div class="integration-chip"><span class="integration-dot" style="--ic:#635BFF"></span>Stripe</div>
-        <div class="integration-chip"><span class="integration-dot" style="--ic:#003087"></span>PayPal</div>
-        <div class="integration-chip"><span class="integration-dot" style="--ic:#2CA01C"></span>QuickBooks</div>
-        <div class="integration-chip"><span class="integration-dot" style="--ic:#0FAAFF"></span>SAP</div>
-        <div class="integration-chip"><span class="integration-dot" style="--ic:#F80000"></span>Oracle</div>
-        <div class="integration-chip"><span class="integration-dot" style="--ic:#4A154B"></span>Slack</div>
-        <div class="integration-chip"><span class="integration-dot" style="--ic:#6264A7"></span>Microsoft Teams</div>
-        <div class="integration-chip"><span class="integration-dot" style="--ic:#10A37F"></span>OpenAI</div>
-        <div class="integration-chip"><span class="integration-dot" style="--ic:var(--text-muted)"></span>REST APIs &amp; Webhooks</div>
+        <span class="integration-col-title">Any Third-Party App</span>
+        <div class="integration-chip"><span class="integration-icon"><svg><use href="#icon-mail"/></svg></span>Productivity &amp; Email Suites</div>
+        <div class="integration-chip"><span class="integration-icon"><svg><use href="#icon-headset"/></svg></span>Messaging &amp; Chat Platforms</div>
+        <div class="integration-chip"><span class="integration-icon"><svg><use href="#icon-cart"/></svg></span>E-Commerce Platforms</div>
+        <div class="integration-chip"><span class="integration-icon"><svg><use href="#icon-invoice"/></svg></span>Payment Gateways</div>
+        <div class="integration-chip"><span class="integration-icon"><svg><use href="#icon-barchart"/></svg></span>Accounting &amp; Finance Tools</div>
+        <div class="integration-chip"><span class="integration-icon"><svg><use href="#icon-layers"/></svg></span>Enterprise ERP Systems</div>
+        <div class="integration-chip"><span class="integration-icon"><svg><use href="#icon-cpu"/></svg></span>AI &amp; Automation Engines</div>
+        <div class="integration-chip"><span class="integration-icon"><svg><use href="#icon-plug"/></svg></span>Custom REST APIs &amp; Webhooks</div>
       </div>
     </div>
   </div>
