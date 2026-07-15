@@ -1,483 +1,530 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Zoho Solutions Partner | Custom CRM, Creator &amp; Automation</title>
-  <meta name="description" content="Custom Zoho solutions: Creator apps, CRM, Books, Inventory, Analytics and Flow integrations that streamline operations and accelerate growth." />
-  <meta property="og:title" content="Zoho Solutions Partner | Custom CRM, Creator &amp; Automation" />
-  <meta property="og:description" content="Custom Zoho solutions that streamline operations, automate workflows, and accelerate growth." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ZohoForge | Premium Zoho Solutions Partner — CRM, Creator &amp; Automation</title>
+<meta name="description" content="ZohoForge builds custom Zoho ecosystems — Creator, CRM, Books, Inventory, Flow, Desk, People, Analytics and third-party integrations — that automate operations and accelerate growth." />
+<meta property="og:title" content="ZohoForge | Premium Zoho Solutions Partner" />
+<meta property="og:description" content="Custom Zoho solutions that streamline operations, automate workflows, and accelerate growth." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<!-- ═══════════════════════════════════════════════
+     DESIGN TOKENS — edit here to retheme the site
+═══════════════════════════════════════════════ -->
+<style>
+  :root {
+    --primary:        #4a3bbf;
+    --primary-light:  #7c5fe6;
+    --primary-glow:   rgba(124,95,230,0.15);
+    --accent:         #f5a623;
+    --bg:             #f9f9fc;
+    --bg-alt:         #f2effc;
+    --bg-card:        #ffffff;
+    --text:           #18192a;
+    --text-muted:     #6b6a85;
+    --text-light:     #9e9ab8;
+    --border:         #e8e4f8;
+    --border-hover:   #c5bef5;
+    --radius-sm:      8px;
+    --radius-md:      12px;
+    --radius-lg:      16px;
+    --radius-xl:      20px;
+    --shadow-card:    0 2px 16px rgba(74,59,191,0.08);
+    --shadow-lg:      0 8px 40px rgba(74,59,191,0.18);
+    --font-display:   'Space Grotesk', sans-serif;
+    --font-body:      'Inter', sans-serif;
+    --max-w:          1140px;
+    --whatsapp-color: #25d366;
+    /* Zoho product palette — stylised placeholder colors, not official brand marks */
+    --z-creator:  #f5a623;
+    --z-crm:      #e2314a;
+    --z-books:    #1e88e5;
+    --z-inv:      #ff7043;
+    --z-flow:     #7c5fe6;
+    --z-desk:     #00b8d4;
+    --z-people:   #43a047;
+    --z-analytics:#c99a06;
+    --z-sign:     #6c4cf1;
+    --z-projects: #0097a7;
+    --z-bigin:    #3bbf9f;
+  }
+  /* ── Reset ── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--font-body); background: var(--bg); color: var(--text); line-height: 1.65; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+  img  { display: block; max-width: 100%; }
+  a    { text-decoration: none; color: inherit; }
+  ul   { list-style: none; }
+  button { font-family: inherit; }
+  /* ── Respect reduced-motion preference ── */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: .001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: .001ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+  /* ── Typography ── */
+  h1,h2,h3,h4 { font-family: var(--font-display); letter-spacing: -0.02em; line-height: 1.1; }
+  h1 { font-size: clamp(34px, 5.2vw, 60px); font-weight: 700; }
+  h2 { font-size: clamp(26px, 3.4vw, 40px); font-weight: 700; }
+  h3 { font-size: 16px; font-weight: 600; }
+  p  { font-size: 15px; }
+  .lead { font-size: 17px; line-height: 1.75; color: var(--text-muted); }
+  /* ── Utilities ── */
+  .container     { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
+  .section       { padding: 88px 0; }
+  .section-alt   { background: var(--bg-alt); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .label         { font-size: 11px; font-weight: 700; color: var(--primary); letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 12px; display: block; }
+  .text-gradient { background: linear-gradient(135deg, var(--primary), var(--primary-light)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .text-muted    { color: var(--text-muted); }
+  .section-head  { max-width: 620px; margin: 0 0 44px; }
+  .section-head.center { margin: 0 auto 48px; text-align: center; }
+  .mt-4  { margin-top: 16px; }
+  .mt-6  { margin-top: 24px; }
+  .mt-8  { margin-top: 32px; }
+  .mt-10 { margin-top: 40px; }
+  .mb-10 { margin-bottom: 40px; }
+  /* ── Buttons ── */
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: var(--font-body); font-weight: 600; font-size: 14px;
+    padding: 13px 22px; border-radius: var(--radius-md);
+    border: none; cursor: pointer; transition: opacity .2s, transform .15s, box-shadow .25s;
+    white-space: nowrap; position: relative; overflow: hidden;
+  }
+  .btn:hover   { opacity: .92; transform: translateY(-1px); }
+  .btn:active  { transform: translateY(0); }
+  .btn-primary { background: linear-gradient(135deg, var(--primary), var(--primary-light)); color: #fff; box-shadow: 0 4px 20px rgba(74,59,191,0.3); }
+  .btn-whatsapp { background: var(--whatsapp-color); color: #fff; box-shadow: 0 4px 20px rgba(37,211,102,0.3); }
+  .btn-outline { background: transparent; color: var(--primary); border: 1.5px solid var(--border-hover); }
+  .btn-sm      { padding: 9px 16px; font-size: 13px; }
+  @keyframes rippleAnim { to { transform: scale(3); opacity: 0; } }
+  /* ── Cards ── */
+  .card {
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: var(--radius-lg); padding: 24px;
+    box-shadow: var(--shadow-card);
+    transition: box-shadow .3s ease, transform .3s ease, border-color .3s ease;
+  }
+  .card:hover { box-shadow: var(--shadow-lg); transform: translateY(-4px); border-color: var(--border-hover); }
+  /* ── Grid helpers ── */
+  .grid { display: grid; gap: 18px; }
+  .grid-2 { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+  .grid-3 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+  .grid-4 { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+  .grid-5 { grid-template-columns: repeat(auto-fit, minmax(155px, 1fr)); }
+  .grid-7 { grid-template-columns: repeat(auto-fit, minmax(128px, 1fr)); }
+  /* ── Stylised Zoho product badge (placeholder — not an official logo) ── */
+  .zoho-badge {
+    width: 46px; height: 46px; border-radius: 12px; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-display); font-weight: 700; font-size: 15px; color: #fff;
+    background: linear-gradient(135deg, var(--bc1, var(--primary)), var(--bc2, var(--primary-light)));
+    box-shadow: 0 6px 18px -6px var(--bc1, var(--primary));
+  }
+  /* ── Check item ── */
+  .check-item { display: flex; align-items: flex-start; gap: 8px; font-size: 13px; padding: 4px 0; }
+  .check-icon { color: var(--primary); margin-top: 2px; flex-shrink: 0; }
+  .check-icon svg { width: 15px; height: 15px; }
+  /* ── Product preview mini-widget ── */
+  .product-preview { margin-top: 16px; border: 1px solid var(--border); border-radius: var(--radius-md); overflow: hidden; }
+  .preview-header { display: flex; justify-content: space-between; align-items: center; padding: 8px 12px; background: var(--bg-alt); font-size: 10.5px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--text-muted); }
+  .preview-body { padding: 12px; background: #fff; }
+  .preview-text-line { display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 6px; }
+  .preview-bar { height: 6px; border-radius: 999px; background: var(--bg-alt); overflow: hidden; }
+  .preview-fill { height: 100%; border-radius: 999px; background: var(--primary); transition: width 1.2s ease; }
+  /* ── Industry pill ── */
+  .industry-card {
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: var(--radius-md); padding: 20px 12px;
+    display: flex; flex-direction: column; align-items: center;
+    text-align: center; gap: 10px;
+    transition: border-color .25s, transform .25s, box-shadow .25s;
+  }
+  .industry-card:hover { border-color: var(--border-hover); transform: translateY(-3px); box-shadow: var(--shadow-card); }
+  .industry-icon {
+    width: 42px; height: 42px; border-radius: var(--radius-sm);
+    background: var(--primary-glow); color: var(--primary);
+    display: flex; align-items: center; justify-content: center;
+    transition: transform .35s ease;
+  }
+  .industry-card:hover .industry-icon { transform: scale(1.12) rotate(-6deg); }
+  .industry-icon svg { width: 20px; height: 20px; }
+  /* ── Contact row ── */
+  .contact-row {
+    display: flex; align-items: center; gap: 14px;
+    border: 1px solid var(--border); border-radius: var(--radius-md);
+    padding: 14px 16px; margin-bottom: 10px;
+    transition: border-color .2s, background .2s, transform .2s;
+  }
+  .contact-row:hover { border-color: var(--border-hover); background: var(--bg-alt); transform: translateX(4px); }
+  .contact-icon {
+    width: 38px; height: 38px; border-radius: var(--radius-sm);
+    background: var(--primary-glow); color: var(--primary);
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  .contact-icon svg { width: 18px; height: 18px; }
+  /* ── Nav ── */
+  nav.site-nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(249,249,252,0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    transition: box-shadow .25s ease;
+  }
+  nav.site-nav.scrolled { box-shadow: 0 6px 28px rgba(74,59,191,0.10); }
+  .nav-inner {
+    max-width: var(--max-w); margin: 0 auto; padding: 0 24px;
+    height: 62px; display: flex; align-items: center; justify-content: space-between;
+  }
+  .nav-logo {
+    display: flex; align-items: center; gap: 10px;
+    font-family: var(--font-display); font-weight: 700; font-size: 17px; color: var(--text);
+  }
+  .nav-logo-mark {
+    width: 34px; height: 34px; border-radius: 9px;
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+    display: flex; align-items: center; justify-content: center;
+    color: #fff; font-weight: 700; font-size: 16px;
+  }
+  .nav-links { display: flex; align-items: center; gap: 26px; }
+  .nav-links a { font-size: 13.5px; font-weight: 500; color: var(--text-muted); transition: color .15s; position: relative; }
+  .nav-links a::after { content:""; position:absolute; left:0; bottom:-6px; width:0; height:2px; background: linear-gradient(90deg,var(--primary),var(--primary-light)); transition: width .25s ease; border-radius: 2px; }
+  .nav-links a:hover { color: var(--text); }
+  .nav-links a:hover::after { width: 100%; }
+  .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+  .nav-hamburger span { width: 22px; height: 2px; background: var(--text); border-radius: 2px; transition: all .25s; }
+  .nav-mobile { display: none; flex-direction: column; gap: 0; background: var(--bg-card); border-bottom: 1px solid var(--border); }
+  .nav-mobile a { padding: 14px 24px; font-size: 15px; color: var(--text-muted); border-bottom: 1px solid var(--border); }
+  .nav-mobile a:hover { color: var(--text); background: var(--bg-alt); }
+  .nav-mobile.open { display: flex; }
+  /* ── Hero ── */
+  .hero {
+    position: relative;
+    min-height: 94vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    padding: 0;
+    background-color: #0c0a24;
+    background-image:
+      radial-gradient(at 0% 0%, rgba(74, 59, 191, 0.4) 0px, transparent 50%),
+      radial-gradient(at 100% 100%, rgba(124, 95, 230, 0.3) 0px, transparent 50%),
+      radial-gradient(at 50% 50%, rgba(20, 14, 56, 0.8) 0px, transparent 80%);
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 24px 24px;
+    z-index: 1;
+    opacity: 0.7;
+  }
+  .hero-inner {
+    position: relative; z-index: 2;
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    width: 100%;
+  }
+  .hero-content { flex: 1 1 520px; max-width: 600px; padding: 108px 0 100px; }
+  .hero-visual-col { flex: 1 1 440px; display: flex; align-items: center; justify-content: center; padding: 40px 0; }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 7px;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.25);
+    backdrop-filter: blur(8px);
+    border-radius: 999px; padding: 6px 16px;
+    font-size: 12px; color: rgba(255,255,255,0.85);
+    font-weight: 500; margin-bottom: 24px;
+    letter-spacing: 0.01em;
+  }
+  .hero-badge-dot {
+    width: 7px; height: 7px; border-radius: 50%;
+    background: #25d366; flex-shrink: 0;
+    box-shadow: 0 0 6px rgba(37,211,102,0.7);
+    animation: pulseGlow 1.8s ease-in-out infinite;
+  }
+  .hero-content h1 {
+    font-weight: 700;
+    line-height: 1.08;
+    letter-spacing: -0.025em;
+    color: #ffffff;
+    margin: 0 0 20px;
+  }
+  .hero-gradient-text {
+    background: linear-gradient(135deg, #a78bfa, #7c5fe6, #60a5fa);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .hero-sub {
+    font-size: 17px;
+    line-height: 1.75;
+    color: rgba(255,255,255,0.78);
+    max-width: 540px;
+    margin: 0 0 32px;
+  }
+  .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 28px; }
+  .btn-hero-primary {
+    background: var(--whatsapp-color); color: #fff; padding: 14px 26px; font-size: 15px;
+    border-radius: var(--radius-md); box-shadow: 0 4px 24px rgba(37,211,102,0.45);
+    border: none; font-weight: 600; display: inline-flex; align-items: center; gap: 8px;
+    transition: transform .2s, box-shadow .2s, opacity .2s; cursor: pointer; text-decoration: none;
+    position: relative; overflow: hidden;
+  }
+  .btn-hero-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(37,211,102,0.55); opacity: 1; }
+  .btn-hero-outline {
+    background: rgba(255,255,255,0.10); color: #fff; padding: 13px 24px; font-size: 15px;
+    border-radius: var(--radius-md); border: 1.5px solid rgba(255,255,255,0.30);
+    backdrop-filter: blur(8px); font-weight: 600; display: inline-flex; align-items: center; gap: 8px;
+    transition: background .2s, border-color .2s, transform .2s; cursor: pointer; text-decoration: none;
+    position: relative; overflow: hidden;
+  }
+  .btn-hero-outline:hover { background: rgba(255,255,255,0.18); border-color: rgba(255,255,255,0.50); transform: translateY(-2px); }
+  .hero-trust { display: flex; flex-wrap: wrap; gap: 10px; }
+  .trust-chip {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: rgba(255,255,255,0.10); border: 1px solid rgba(255,255,255,0.20);
+    backdrop-filter: blur(6px); border-radius: 999px; padding: 5px 12px;
+    font-size: 12px; color: rgba(255,255,255,0.80); font-weight: 500;
+  }
+  .trust-chip svg { color: #a78bfa; flex-shrink: 0; }
+  /* ── Hero ecosystem visualization ── */
+  .orbit-wrap { position: relative; width: 460px; height: 460px; max-width: 100%; transform-style: preserve-3d; transition: transform .4s ease; }
+  .orbit-ring { position: absolute; inset: 8%; border: 1px dashed rgba(255,255,255,.16); border-radius: 50%; animation: spinSlow 70s linear infinite; }
+  .orbit-ring.r2 { inset: 22%; animation-duration: 90s; animation-direction: reverse; border-color: rgba(167,139,250,.18); }
+  @keyframes spinSlow { to { transform: rotate(360deg); } }
+  .orbit-hub {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+    width: 104px; height: 104px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+    display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;
+    color: #fff; font-family: var(--font-display); font-weight: 700; font-size: 12.5px; gap: 2px;
+    box-shadow: 0 0 0 8px rgba(124,95,230,.14), 0 0 60px rgba(124,95,230,.55);
+    z-index: 3; letter-spacing: .01em;
+  }
+  .orbit-hub span { display:block; font-family: var(--font-body); font-weight: 500; font-size: 9.5px; opacity: .8; letter-spacing: .06em; text-transform: uppercase; }
+  .connector-svg { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 1; overflow: visible; }
+  .connector-svg path { fill: none; stroke-width: 1.4; stroke-dasharray: 5 7; opacity: .55; animation: dashFlow 2.6s linear infinite; }
+  @keyframes dashFlow { to { stroke-dashoffset: -36; } }
+  .orbit-node {
+    position: absolute; transform: translate(-50%,-50%);
+    width: 92px; padding: 10px 8px; border-radius: 14px;
+    background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.18);
+    backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+    display: flex; flex-direction: column; align-items: center; gap: 6px; text-align: center;
+    z-index: 2; animation: floatY 5.5s ease-in-out infinite;
+    transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease, background .3s ease;
+    cursor: default;
+  }
+  .orbit-node:hover { transform: translate(-50%,-50%) scale(1.14); border-color: rgba(255,255,255,.45); background: rgba(255,255,255,0.14); box-shadow: 0 10px 34px rgba(0,0,0,.4); z-index: 4; }
+  @keyframes floatY { 0%,100% { transform: translate(-50%,-50%) translateY(0); } 50% { transform: translate(-50%,-50%) translateY(-12px); } }
+  .orbit-node:hover { animation-play-state: paused; }
+  .node-icon { width: 30px; height: 30px; border-radius: 9px; display: flex; align-items: center; justify-content: center; background: var(--nc, var(--primary)); color: #fff; flex-shrink: 0; }
+  .node-icon svg { width: 15px; height: 15px; }
+  .orbit-node span { font-size: 10.5px; font-weight: 600; color: rgba(255,255,255,.92); line-height: 1.2; }
+  @media (max-width: 980px) {
+    .hero-inner { flex-direction: column; }
+    .hero-content { padding: 96px 0 24px; max-width: 100%; text-align: center; }
+    .hero-sub { margin-left: auto; margin-right: auto; }
+    .hero-actions, .hero-trust { justify-content: center; }
+    .hero-visual-col { padding: 8px 0 72px; }
+    .orbit-wrap { width: 380px; height: 380px; }
+  }
+  /* ── Footer ── */
+  footer { border-top: 1px solid var(--border); padding: 28px 24px; font-size: 13px; color: var(--text-light); }
+  .footer-inner { max-width: var(--max-w); margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; }
+  .footer-logo { display: flex; align-items: center; gap: 8px; }
+  .footer-logo-mark { width: 26px; height: 26px; border-radius: 6px; background: linear-gradient(135deg, var(--primary), var(--primary-light)); display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; font-size: 12px; }
+  /* ── Responsive base ── */
+  @media (max-width: 768px) {
+    .section          { padding: 60px 0; }
+    .nav-links        { display: none; }
+    .nav-hamburger    { display: flex; }
+    .nav-cta          { display: none; }
+    .two-col          { grid-template-columns: 1fr !important; }
+    .stat-num         { font-size: 36px; }
+  }
+  @media (max-width: 480px) {
+    .container        { padding: 0 16px; }
+    .grid-3           { grid-template-columns: 1fr; }
+    .grid-5           { grid-template-columns: repeat(2, 1fr); }
+    .grid-7           { grid-template-columns: repeat(2, 1fr); }
+    .hero-actions     { flex-direction: column; }
+    .btn-hero-primary, .btn-hero-outline { justify-content: center; width: 100%; }
+  }
+  /* ── Why Us enhanced ── */
+  .why-layout { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); gap: 48px; align-items: start; }
+  .why-card {
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: var(--radius-lg); padding: 24px 22px;
+    box-shadow: var(--shadow-card);
+    transition: box-shadow .3s, transform .3s, border-color .3s;
+    display: flex; flex-direction: column; gap: 10px;
+  }
+  .why-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-4px); border-color: var(--border-hover); }
+  .why-icon-box { width: 48px; height: 48px; border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-bottom: 4px; transition: transform .35s ease; }
+  .why-card:hover .why-icon-box { transform: scale(1.1) rotate(-4deg); }
+  .why-icon-box svg { width: 24px; height: 24px; }
+  .why-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
+  .why-tag { font-size: 11px; font-weight: 600; padding: 3px 9px; border-radius: 999px; background: var(--bg-alt); color: var(--text-muted); border: 1px solid var(--border); }
+  .why-stat-row { display: flex; gap: 24px; margin-top: 28px; flex-wrap: wrap; }
+  .why-stat { display: flex; flex-direction: column; }
+  .why-stat-num { font-family: var(--font-display); font-size: 30px; font-weight: 700; }
+  .why-stat-label { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+  /* ── Process track ── */
+  .process-track { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 0; justify-content: center; }
+  .process-step { flex: 1; min-width: 140px; max-width: 200px; display: flex; flex-direction: column; align-items: center; text-align: center; padding: 0 8px; position: relative; }
+  .process-icon-wrap {
+    width: 58px; height: 58px; border-radius: 16px; margin-bottom: 16px;
+    background: var(--icon-bg, var(--primary-glow)); color: var(--icon-color, var(--primary));
+    display: flex; align-items: center; justify-content: center;
+    transition: transform .35s ease, box-shadow .35s ease;
+  }
+  .process-step:hover .process-icon-wrap { transform: scale(1.1) translateY(-4px); box-shadow: var(--shadow-card); }
+  .process-icon-wrap svg { width: 28px; height: 28px; }
+  .process-step-num {
+    position: absolute; top: 44px; right: calc(50% - 42px);
+    width: 22px; height: 22px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+    color: #fff; font-size: 11px; font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+    border: 2px solid #fff;
+  }
+  .process-title { font-size: 14px; font-weight: 600; margin-bottom: 6px; }
+  .process-desc { font-size: 12px; line-height: 1.6; color: var(--text-muted); }
+  .process-connector { display: flex; align-items: center; justify-content: center; padding-top: 20px; color: var(--border-hover); flex-shrink: 0; width: 32px; }
+  .process-connector svg { width: 28px; height: 10px; }
+  /* ── Benefit cards ── */
+  .benefit-card {
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: var(--radius-lg); padding: 28px 24px;
+    box-shadow: var(--shadow-card);
+    transition: box-shadow .3s, transform .3s, border-color .3s;
+    display: flex; flex-direction: column; gap: 8px;
+  }
+  .benefit-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-4px); border-color: var(--border-hover); }
+  .benefit-icon-wrap {
+    width: 46px; height: 46px; border-radius: var(--radius-sm);
+    background: var(--bc, #f0edfb);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 4px; flex-shrink: 0;
+    color: var(--bic, var(--primary));
+    transition: transform .35s ease;
+  }
+  .benefit-card:hover .benefit-icon-wrap { transform: rotate(-8deg) scale(1.08); }
+  .benefit-icon-wrap svg { width: 22px; height: 22px; }
+  .benefit-stat { font-family: var(--font-display); font-size: 38px; font-weight: 700; line-height: 1; }
+  .benefit-title { font-size: 15px; font-weight: 600; }
+  .benefit-desc { font-size: 13px; line-height: 1.65; color: var(--text-muted); }
+  @media (max-width: 900px) {
+    .process-track { flex-direction: column; align-items: center; gap: 0; }
+    .process-connector { transform: rotate(90deg); width: auto; padding: 4px 0; }
+    .process-step { max-width: 340px; width: 100%; flex-direction: row; text-align: left; align-items: flex-start; padding: 14px 0; gap: 16px; }
+    .process-icon-wrap { flex-shrink: 0; margin-bottom: 0; }
+    .process-step-num { top: 44px; right: auto; left: 46px; }
+    .process-step > div:last-child { display: flex; flex-direction: column; }
+  }
+  @media (max-width: 640px) { .why-layout { gap: 32px; } }
 
-  <!-- ═══════════════════════════════════════════════
-       DESIGN TOKENS — edit here to retheme the site
-  ═══════════════════════════════════════════════ -->
-  <style>
-    :root {
-      --primary:        #4a3bbf;
-      --primary-light:  #7c5fe6;
-      --primary-glow:   rgba(124,95,230,0.15);
-      --accent:         #f5a623;
-      --bg:             #f9f9fc;
-      --bg-alt:         #f2effc;
-      --bg-card:        #ffffff;
-      --text:           #18192a;
-      --text-muted:     #6b6a85;
-      --text-light:     #9e9ab8;
-      --border:         #e8e4f8;
-      --border-hover:   #c5bef5;
-      --radius-sm:      8px;
-      --radius-md:      12px;
-      --radius-lg:      16px;
-      --radius-xl:      20px;
-      --shadow-card:    0 2px 16px rgba(74,59,191,0.08);
-      --shadow-lg:      0 8px 40px rgba(74,59,191,0.18);
-      --font-display:   'Space Grotesk', sans-serif;
-      --font-body:      'Inter', sans-serif;
-      --max-w:          1100px;
-      --whatsapp-color: #25d366;
-    }
+  /* ══════════════════════════════════════════
+     NEW — Scroll reveal + counters + ripples
+  ══════════════════════════════════════════ */
+  .reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s cubic-bezier(.16,1,.3,1), transform .7s cubic-bezier(.16,1,.3,1); }
+  .reveal.is-visible { opacity: 1; transform: none; }
+  @keyframes pulseGlow { 0%,100% { opacity: .55; } 50% { opacity: 1; } }
 
-    /* ── Reset ── */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body { font-family: var(--font-body); background: var(--bg); color: var(--text); line-height: 1.65; -webkit-font-smoothing: antialiased; }
-    img  { display: block; max-width: 100%; }
-    a    { text-decoration: none; color: inherit; }
-    ul   { list-style: none; }
+  /* ══════════════════════════════════════════
+     NEW — Solutions section (product showcase)
+  ══════════════════════════════════════════ */
+  .solutions-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 18px; }
+  .solution-card {
+    background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg);
+    padding: 22px 20px; display: flex; flex-direction: column; gap: 10px; position: relative; overflow: hidden;
+    transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+  }
+  .solution-card::before {
+    content: ""; position: absolute; inset: 0;
+    background: linear-gradient(135deg, var(--sc, var(--primary)) 0%, transparent 55%);
+    opacity: 0; transition: opacity .3s ease; pointer-events: none;
+  }
+  .solution-card:hover::before { opacity: .07; }
+  .solution-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); border-color: var(--border-hover); }
+  .solution-badge {
+    width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center;
+    background: var(--sbg, var(--primary-glow)); color: var(--sc, var(--primary));
+    transition: transform .35s ease;
+  }
+  .solution-card:hover .solution-badge { transform: scale(1.12) rotate(-6deg); }
+  .solution-badge svg { width: 22px; height: 22px; }
+  .solution-name { font-size: 15px; font-weight: 700; font-family: var(--font-display); }
+  .solution-desc { font-size: 13px; color: var(--text-muted); line-height: 1.6; flex: 1; }
+  .solution-learn { font-size: 12.5px; font-weight: 700; color: var(--sc, var(--primary)); display: inline-flex; align-items: center; gap: 5px; margin-top: 6px; }
+  .solution-learn svg { width: 12px; height: 12px; transition: transform .2s ease; }
+  .solution-card:hover .solution-learn svg { transform: translateX(4px); }
 
-    /* ── Typography ── */
-    h1,h2,h3,h4 { font-family: var(--font-display); letter-spacing: -0.02em; line-height: 1.1; }
-    h1 { font-size: clamp(32px, 5.5vw, 62px); font-weight: 700; }
-    h2 { font-size: clamp(24px, 3.5vw, 42px); font-weight: 700; }
-    h3 { font-size: 16px; font-weight: 600; }
+  /* ══════════════════════════════════════════
+     NEW — Expertise / services section
+  ══════════════════════════════════════════ */
+  .expertise-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px,1fr)); gap: 18px; }
+  .expertise-card {
+    background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg);
+    padding: 24px 20px; transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+  }
+  .expertise-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); border-color: var(--border-hover); }
+  .expertise-icon {
+    width: 46px; height: 46px; border-radius: 12px; background: var(--primary-glow); color: var(--primary);
+    display: flex; align-items: center; justify-content: center; margin-bottom: 14px; transition: transform .4s ease;
+  }
+  .expertise-card:hover .expertise-icon { transform: rotate(-10deg) scale(1.1); }
+  .expertise-icon svg { width: 22px; height: 22px; }
+  .expertise-title { font-size: 14.5px; font-weight: 700; margin-bottom: 6px; }
+  .expertise-desc { font-size: 12.5px; color: var(--text-muted); line-height: 1.6; }
 
-    /* ── Utilities ── */
-    .container     { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
-    .section       { padding: 72px 0; }
-    .section-alt   { background: var(--bg-alt); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-    .label         { font-size: 11px; font-weight: 700; color: var(--primary); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 10px; display: block; }
-    .text-gradient { background: linear-gradient(135deg, var(--primary), var(--primary-light)); -webkit-background-clip: text; background-clip: text; color: transparent; }
-    .text-muted    { color: var(--text-muted); }
-    .mt-4  { margin-top: 16px; }
-    .mt-6  { margin-top: 24px; }
-    .mt-8  { margin-top: 32px; }
-    .mt-10 { margin-top: 40px; }
-    .mb-10 { margin-bottom: 40px; }
-
-    /* ── Buttons ── */
-    .btn {
-      display: inline-flex; align-items: center; gap: 8px;
-      font-family: var(--font-body); font-weight: 600; font-size: 14px;
-      padding: 13px 22px; border-radius: var(--radius-md);
-      border: none; cursor: pointer; transition: opacity .2s, transform .15s;
-      white-space: nowrap;
-    }
-    .btn:hover   { opacity: .9; transform: translateY(-1px); }
-    .btn:active  { transform: translateY(0); }
-    .btn-primary { background: linear-gradient(135deg, var(--primary), var(--primary-light)); color: #fff; box-shadow: 0 4px 20px rgba(74,59,191,0.3); }
-    .btn-whatsapp { background: var(--whatsapp-color); color: #fff; box-shadow: 0 4px 20px rgba(37,211,102,0.3); }
-    .btn-outline { background: transparent; color: var(--primary); border: 1.5px solid var(--border-hover); }
-    .btn-sm      { padding: 9px 16px; font-size: 13px; }
-
-    /* ── Cards ── */
-    .card {
-      background: var(--bg-card); border: 1px solid var(--border);
-      border-radius: var(--radius-lg); padding: 24px;
-      box-shadow: var(--shadow-card);
-      transition: box-shadow .25s, transform .25s;
-    }
-    .card:hover { box-shadow: var(--shadow-lg); transform: translateY(-3px); }
-
-    /* ── Grid helpers ── */
-    .grid { display: grid; gap: 18px; }
-    .grid-2 { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
-    .grid-3 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
-    .grid-4 { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
-    .grid-5 { grid-template-columns: repeat(auto-fit, minmax(155px, 1fr)); }
-    .grid-7 { grid-template-columns: repeat(auto-fit, minmax(128px, 1fr)); }
-
-    /* ── Zoho brand design badge ── */
-    .zoho-logo-box {
-      width: 100%; height: 52px;
-      aspect-ratio:4/3;
-      border-radius: var(--radius-sm);
-      border: 1px solid var(--border); background: #fff;
-      display: flex; align-items: center; justify-content: center;
-      padding: 10px 14px; margin-bottom: 16px; flex-shrink: 0;
-    }
-    .zoho-badge-text {
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: 17px;
-      letter-spacing: -0.02em;
-    }
-
-    /* ── Check item ── */
-    .check-item { display: flex; align-items: flex-start; gap: 8px; font-size: 13px; padding: 4px 0; }
-    .check-icon { color: var(--primary); margin-top: 2px; flex-shrink: 0; }
-    .check-icon svg { width: 15px; height: 15px; }
-
-    /* ── Process step ── */
-    .step-num {
-      width: 34px; height: 34px; border-radius: 50%;
-      background: linear-gradient(135deg, var(--primary), var(--primary-light));
-      color: #fff; font-family: var(--font-display); font-weight: 700; font-size: 13px;
-      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
-    }
-    .step-icon {
-      width: 34px; height: 34px; border-radius: var(--radius-sm);
-      background: var(--primary-glow); color: var(--primary);
-      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
-    }
-    .step-icon svg { width: 18px; height: 18px; }
-
-    /* ── Industry pill ── */
-    .industry-card {
-      background: var(--bg-card); border: 1px solid var(--border);
-      border-radius: var(--radius-md); padding: 18px 12px;
-      display: flex; flex-direction: column; align-items: center;
-      text-align: center; gap: 10px;
-      transition: border-color .2s, transform .2s;
-    }
-    .industry-card:hover { border-color: var(--border-hover); transform: translateY(-2px); }
-    .industry-icon {
-      width: 42px; height: 42px; border-radius: var(--radius-sm);
-      background: var(--primary-glow); color: var(--primary);
-      display: flex; align-items: center; justify-content: center;
-    }
-    .industry-icon svg { width: 20px; height: 20px; }
-
-    /* ── Stat card ── */
-    .stat-num { font-family: var(--font-display); font-size: 44px; font-weight: 700; line-height: 1; margin-bottom: 8px; }
-
-    /* ── Contact row ── */
-    .contact-row {
-      display: flex; align-items: center; gap: 14px;
-      border: 1px solid var(--border); border-radius: var(--radius-md);
-      padding: 14px 16px; margin-bottom: 10px;
-      transition: border-color .2s, background .2s;
-    }
-    .contact-row:hover { border-color: var(--border-hover); background: var(--bg-alt); }
-    .contact-icon {
-      width: 38px; height: 38px; border-radius: var(--radius-sm);
-      background: var(--primary-glow); color: var(--primary);
-      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
-    }
-    .contact-icon svg { width: 18px; height: 18px; }
-
-    /* ── Nav ── */
-    nav.site-nav {
-      position: sticky; top: 0; z-index: 100;
-      background: rgba(249,249,252,0.85); backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-    }
-    .nav-inner {
-      max-width: var(--max-w); margin: 0 auto; padding: 0 24px;
-      height: 60px; display: flex; align-items: center; justify-content: space-between;
-    }
-    .nav-logo {
-      display: flex; align-items: center; gap: 10px;
-      font-family: var(--font-display); font-weight: 700; font-size: 17px; color: var(--text);
-    }
-    .nav-logo-mark {
-      width: 34px; height: 34px; border-radius: 9px;
-      background: linear-gradient(135deg, var(--primary), var(--primary-light));
-      display: flex; align-items: center; justify-content: center;
-      color: #fff; font-weight: 700; font-size: 16px;
-    }
-    .nav-links { display: flex; align-items: center; gap: 24px; }
-    .nav-links a { font-size: 13px; color: var(--text-muted); transition: color .15s; }
-    .nav-links a:hover { color: var(--text); }
-    .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
-    .nav-hamburger span { width: 22px; height: 2px; background: var(--text); border-radius: 2px; transition: all .25s; }
-    .nav-mobile { display: none; flex-direction: column; gap: 0; background: var(--bg-card); border-bottom: 1px solid var(--border); }
-    .nav-mobile a { padding: 14px 24px; font-size: 15px; color: var(--text-muted); border-bottom: 1px solid var(--border); }
-    .nav-mobile a:hover { color: var(--text); background: var(--bg-alt); }
-    .nav-mobile.open { display: flex; }
-
-    /* ── Hero ── */
-    .hero {
-      position: relative;
-      min-height: 92vh;
-      display: flex;
-      align-items: center;
-      overflow: hidden;
-      padding: 0;
-      background-color: #0c0a24;
-      background-image: 
-        radial-gradient(at 0% 0%, rgba(74, 59, 191, 0.4) 0px, transparent 50%),
-        radial-gradient(at 100% 100%, rgba(124, 95, 230, 0.3) 0px, transparent 50%),
-        radial-gradient(at 50% 50%, rgba(20, 14, 56, 0.8) 0px, transparent 80%);
-    }
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-      background-size: 24px 24px;
-      z-index: 1;
-      opacity: 0.7;
-    }
-    /* Content sits above overlay */
-    .hero-content {
-      position: relative; z-index: 2;
-      max-width: var(--max-w);
-      margin: 0 auto;
-      padding: 100px 24px 96px;
-      max-width: 680px;
-      width: 100%;
-      margin-left: max(24px, calc((100vw - var(--max-w)) / 2));
-    }
-    .hero-badge {
-      display: inline-flex; align-items: center; gap: 7px;
-      background: rgba(255,255,255,0.12);
-      border: 1px solid rgba(255,255,255,0.25);
-      backdrop-filter: blur(8px);
-      border-radius: 999px; padding: 6px 16px;
-      font-size: 12px; color: rgba(255,255,255,0.85);
-      font-weight: 500; margin-bottom: 24px;
-      letter-spacing: 0.01em;
-    }
-    .hero-badge-dot {
-      width: 7px; height: 7px; border-radius: 50%;
-      background: #25d366; flex-shrink: 0;
-      box-shadow: 0 0 6px rgba(37,211,102,0.7);
-    }
-    .hero-content h1 {
-      font-size: clamp(34px, 5.5vw, 64px);
-      font-weight: 700;
-      line-height: 1.08;
-      letter-spacing: -0.025em;
-      color: #ffffff;
-      margin: 0 0 20px;
-    }
-    .hero-gradient-text {
-      background: linear-gradient(135deg, #a78bfa, #7c5fe6, #60a5fa);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-    .hero-sub {
-      font-size: 17px;
-      line-height: 1.75;
-      color: rgba(255,255,255,0.78);
-      max-width: 540px;
-      margin: 0 0 32px;
-    }
-    .hero-actions {
-      display: flex; flex-wrap: wrap; gap: 12px;
-      margin-bottom: 28px;
-    }
-    /* Hero-specific button overrides */
-    .btn-hero-primary {
-      background: var(--whatsapp-color);
-      color: #fff;
-      padding: 14px 26px;
-      font-size: 15px;
-      border-radius: var(--radius-md);
-      box-shadow: 0 4px 24px rgba(37,211,102,0.45);
-      border: none;
-      font-weight: 600;
-      display: inline-flex; align-items: center; gap: 8px;
-      transition: transform .2s, box-shadow .2s, opacity .2s;
-      cursor: pointer;
-      text-decoration: none;
-    }
-    .btn-hero-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 32px rgba(37,211,102,0.55);
-      opacity: 1;
-    }
-    .btn-hero-outline {
-      background: rgba(255,255,255,0.10);
-      color: #fff;
-      padding: 13px 24px;
-      font-size: 15px;
-      border-radius: var(--radius-md);
-      border: 1.5px solid rgba(255,255,255,0.30);
-      backdrop-filter: blur(8px);
-      font-weight: 600;
-      display: inline-flex; align-items: center; gap: 8px;
-      transition: background .2s, border-color .2s, transform .2s;
-      cursor: pointer;
-      text-decoration: none;
-    }
-    .btn-hero-outline:hover {
-      background: rgba(255,255,255,0.18);
-      border-color: rgba(255,255,255,0.50);
-      transform: translateY(-2px);
-    }
-    .hero-trust {
-      display: flex; flex-wrap: wrap; gap: 10px;
-    }
-    .trust-chip {
-      display: inline-flex; align-items: center; gap: 6px;
-      background: rgba(255,255,255,0.10);
-      border: 1px solid rgba(255,255,255,0.20);
-      backdrop-filter: blur(6px);
-      border-radius: 999px; padding: 5px 12px;
-      font-size: 12px; color: rgba(255,255,255,0.80);
-      font-weight: 500;
-    }
-    .trust-chip svg { color: #a78bfa; flex-shrink: 0; }
-
-    /* ── Footer ── */
-    footer {
-      border-top: 1px solid var(--border); padding: 28px 24px;
-      font-size: 13px; color: var(--text-light);
-    }
-    .footer-inner {
-      max-width: var(--max-w); margin: 0 auto;
-      display: flex; flex-wrap: wrap; align-items: center;
-      justify-content: space-between; gap: 12px;
-    }
-    .footer-logo { display: flex; align-items: center; gap: 8px; }
-    .footer-logo-mark {
-      width: 26px; height: 26px; border-radius: 6px;
-      background: linear-gradient(135deg, var(--primary), var(--primary-light));
-      display: flex; align-items: center; justify-content: center;
-      color: #fff; font-weight: 700; font-size: 12px;
-    }
-
-     /* ── Zoho logo icon box ── */
-    .zoho-logo-box {
-      width: 100%; max-width: 160px; height: 52px;
-      border-radius: var(--radius-sm);
-      border: 1px solid var(--border); background: #fff;
-      display: flex; align-items: center; justify-content: center;
-      padding: 10px 14px; margin-bottom: 16px; flex-shrink: 0;
-    }
-    .zoho-logo-box img {
-      max-width: 100%; max-height: 100%;
-      aspect-ratio:4/3;
-      width: auto; height: auto;
-      object-fit: contain; display: block;
-    }
-
-    /* ── Responsive ── */
-    @media (max-width: 768px) {
-      .section          { padding: 52px 0; }
-      .nav-links        { display: none; }
-      .nav-hamburger    { display: flex; }
-      .nav-cta          { display: none; }
-      .hero             { min-height: 100svh; }
-      .hero-content     { padding: 80px 20px 72px; margin-left: 0; max-width: 100%; }
-      .hero-sub         { font-size: 15px; }
-      .two-col          { grid-template-columns: 1fr !important; }
-      .stat-num         { font-size: 36px; }
-    }
-    @media (max-width: 480px) {
-      .container        { padding: 0 16px; }
-      .grid-3           { grid-template-columns: 1fr; }
-      .grid-5           { grid-template-columns: repeat(2, 1fr); }
-      .grid-7           { grid-template-columns: repeat(2, 1fr); }
-      .hero-actions     { flex-direction: column; }
-      .btn-hero-primary,
-      .btn-hero-outline { justify-content: center; width: 100%; }
-      .hero-content     { padding: 72px 16px 64px; }
-    }
-
-    /* ── Why Us enhanced ── */
-    .why-layout { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); gap: 48px; align-items: start; }
-    .why-card {
-      background: var(--bg-card); border: 1px solid var(--border);
-      border-radius: var(--radius-lg); padding: 24px 22px;
-      box-shadow: var(--shadow-card);
-      transition: box-shadow .25s, transform .25s;
-      display: flex; flex-direction: column; gap: 10px;
-    }
-    .why-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-3px); }
-    .why-icon-box {
-      width: 48px; height: 48px; border-radius: var(--radius-sm);
-      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
-      margin-bottom: 4px;
-    }
-    .why-icon-box svg { width: 24px; height: 24px; }
-    .why-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
-    .why-tag {
-      font-size: 11px; font-weight: 600; padding: 3px 9px;
-      border-radius: 999px; background: var(--bg-alt);
-      color: var(--text-muted); border: 1px solid var(--border);
-    }
-    .why-stat-row { display: flex; gap: 24px; margin-top: 28px; flex-wrap: wrap; }
-    .why-stat { display: flex; flex-direction: column; }
-    .why-stat-num { font-family: var(--font-display); font-size: 28px; font-weight: 700; }
-    .why-stat-label { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
-
-    /* ── Process track ── */
-    .process-track {
-      display: flex; flex-wrap: wrap;
-      align-items: flex-start; gap: 0;
-      justify-content: center;
-    }
-    .process-step {
-      flex: 1; min-width: 140px; max-width: 200px;
-      display: flex; flex-direction: column; align-items: center;
-      text-align: center; padding: 0 8px;
-      position: relative;
-    }
-    .process-step:hover .process-icon-wrap { transform: scale(1.08); }
-    .process-icon-wrap svg { width: 28px; height: 28px; }
-    .process-step-num {
-      position: absolute; top: 44px; right: calc(50% - 42px);
-      width: 22px; height: 22px; border-radius: 50%;
-      background: linear-gradient(135deg, var(--primary), var(--primary-light));
-      color: #fff; font-size: 11px; font-weight: 700;
-      display: flex; align-items: center; justify-content: center;
-      border: 2px solid #fff;
-    }
-    .process-title { font-size: 14px; font-weight: 600; margin-bottom: 6px; }
-    .process-desc { font-size: 12px; line-height: 1.6; color: var(--text-muted); }
-    .process-connector {
-      display: flex; align-items: center; justify-content: center;
-      padding-top: 20px; color: var(--border-hover); flex-shrink: 0; width: 32px;
-    }
-    .process-connector svg { width: 28px; height: 10px; }
-
-    /* ── Benefit cards ── */
-    .benefit-card {
-      background: var(--bg-card); border: 1px solid var(--border);
-      border-radius: var(--radius-lg); padding: 28px 24px;
-      box-shadow: var(--shadow-card);
-      transition: box-shadow .25s, transform .25s;
-      display: flex; flex-direction: column; gap: 8px;
-    }
-    .benefit-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-3px); }
-    .benefit-icon-wrap {
-      width: 46px; height: 46px; border-radius: var(--radius-sm);
-      background: var(--bc, #f0edfb);
-      display: flex; align-items: center; justify-content: center;
-      margin-bottom: 4px; flex-shrink: 0;
-      color: var(--bic, var(--primary));
-    }
-    .benefit-icon-wrap svg { width: 22px; height: 22px; }
-    .benefit-stat {
-      font-family: var(--font-display); font-size: 38px;
-      font-weight: 700; line-height: 1;
-    }
-    .benefit-title { font-size: 15px; font-weight: 600; }
-    .benefit-desc { font-size: 13px; line-height: 1.65; color: var(--text-muted); }
-
-    /* ── Process responsive ── */
-    @media (max-width: 900px) {
-      .process-track { flex-direction: column; align-items: center; gap: 0; }
-      .process-connector { transform: rotate(90deg); width: auto; padding: 4px 0; }
-      .process-step { max-width: 340px; width: 100%; flex-direction: row; text-align: left; align-items: flex-start; padding: 14px 0; gap: 16px; }
-      .process-icon-wrap { flex-shrink: 0; margin-bottom: 0; }
-      .process-step-num { top: 44px; right: auto; left: 46px; }
-      .process-step > div:last-child { display: flex; flex-direction: column; }
-    }
-    @media (max-width: 640px) {
-      .why-layout { gap: 32px; }
-    }
-
-  </style>
+  /* ══════════════════════════════════════════
+     NEW — Integrations diagram
+  ══════════════════════════════════════════ */
+  .integration-panel { display: grid; grid-template-columns: 1fr auto 1fr; gap: 20px; align-items: center; }
+  .integration-col { display: flex; flex-direction: column; gap: 10px; }
+  .integration-col-title { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--text-light); margin-bottom: 4px; }
+  .integration-chip {
+    display: flex; align-items: center; gap: 10px; padding: 11px 14px; border-radius: var(--radius-md);
+    border: 1px solid var(--border); background: var(--bg-card); font-size: 13px; font-weight: 600;
+    transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+  }
+  .integration-col:first-child .integration-chip:hover { transform: translateX(4px); border-color: var(--border-hover); box-shadow: var(--shadow-card); }
+  .integration-col:last-child .integration-chip:hover { transform: translateX(-4px); border-color: var(--border-hover); box-shadow: var(--shadow-card); }
+  .integration-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--ic, var(--primary)); flex-shrink: 0; }
+  .integration-hub-col { display: flex; flex-direction: column; align-items: center; gap: 14px; }
+  .integration-hub {
+    width: 92px; height: 92px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+    display: flex; align-items: center; justify-content: center; flex-direction: column;
+    color: #fff; font-weight: 700; font-family: var(--font-display); font-size: 12px;
+    box-shadow: 0 0 0 10px var(--primary-glow), 0 10px 30px rgba(74,59,191,.3);
+    text-align: center; gap: 2px;
+  }
+  .integration-hub span { font-family: var(--font-body); font-weight: 500; font-size: 9px; text-transform: uppercase; letter-spacing: .06em; opacity: .85; }
+  .flow-line { width: 70px; height: 2px; background: repeating-linear-gradient(90deg, var(--primary-light) 0 8px, transparent 8px 16px); background-size: 32px 2px; animation: flowMove 1s linear infinite; }
+  .flow-line.rev { animation-direction: reverse; }
+  @keyframes flowMove { to { background-position: -32px 0; } }
+  @media (max-width: 860px) {
+    .integration-panel { grid-template-columns: 1fr; }
+    .integration-hub-col { flex-direction: row; justify-content: center; }
+    .flow-line { width: 2px; height: 40px; background: repeating-linear-gradient(180deg, var(--primary-light) 0 8px, transparent 8px 16px); background-size: 2px 32px; animation: flowMoveV 1s linear infinite; }
+    @keyframes flowMoveV { to { background-position: 0 -32px; } }
+  }
+</style>
 </head>
 <body>
-
 <!-- ════════════════════════════════════════════
      INLINE SVG PRODUCTS & GRAPHICS
 ════════════════════════════════════════════ -->
@@ -545,20 +592,80 @@
   <symbol id="icon-home" viewBox="0 0 24 24">
     <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="9 22 9 12 15 12 15 22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
   </symbol>
+  <!-- New icons for extended product / service set -->
+  <symbol id="icon-headset" viewBox="0 0 24 24">
+    <path d="M3 18v-6a9 9 0 0 1 18 0v6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <rect x="3" y="15" width="5" height="6" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+    <rect x="16" y="15" width="5" height="6" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path d="M21 19v1a3 3 0 0 1-3 3h-3" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="icon-users" viewBox="0 0 24 24">
+    <circle cx="9" cy="8" r="4" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path d="M2 21v-1a6 6 0 0 1 6-6h2a6 6 0 0 1 6 6v1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <path d="M16 3.2a4 4 0 0 1 0 7.6M22 21v-1a6 6 0 0 0-4.5-5.8" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="icon-barchart" viewBox="0 0 24 24">
+    <line x1="4" y1="21" x2="4" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    <line x1="12" y1="21" x2="12" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    <line x1="20" y1="21" x2="20" y2="15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    <line x1="2" y1="21" x2="22" y2="21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="icon-signature" viewBox="0 0 24 24">
+    <path d="M3 17s2-1 3-3 1.5-5 3-5 1 4 2.5 4 2-3 4-3 1 2.5 3.5 2.5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <line x1="3" y1="21" x2="21" y2="21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="icon-kanban" viewBox="0 0 24 24">
+    <rect x="3" y="4" width="18" height="17" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+    <line x1="9" y1="4" x2="9" y2="21" stroke="currentColor" stroke-width="2"/>
+    <line x1="15" y1="4" x2="15" y2="21" stroke="currentColor" stroke-width="2"/>
+    <line x1="5.5" y1="8" x2="7" y2="8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+    <line x1="11.5" y1="10" x2="13" y2="10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="icon-lightbulb" viewBox="0 0 24 24">
+    <path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.2 1 2.3h6c0-1.1.4-1.8 1-2.3A7 7 0 0 0 12 2z" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="icon-cpu" viewBox="0 0 24 24">
+    <rect x="6" y="6" width="12" height="12" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+    <rect x="9" y="9" width="6" height="6" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path d="M9 1v3M15 1v3M9 20v3M15 20v3M1 9h3M1 15h3M20 9h3M20 15h3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="icon-layers" viewBox="0 0 24 24">
+    <polygon points="12 2 22 8 12 14 2 8 12 2" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/>
+    <polyline points="2 14 12 20 22 14" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <polyline points="2 11 12 17 22 11" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="icon-plug" viewBox="0 0 24 24">
+    <path d="M9 2v5M15 2v5M7.5 7h9l-1 5a4.5 4.5 0 0 1-9 0z" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <line x1="12" y1="17" x2="12" y2="22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="icon-shield-check" viewBox="0 0 24 24">
+    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/>
+    <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="icon-workflow" viewBox="0 0 24 24">
+    <circle cx="5" cy="5" r="3" stroke="currentColor" stroke-width="2" fill="none"/>
+    <circle cx="19" cy="19" r="3" stroke="currentColor" stroke-width="2" fill="none"/>
+    <circle cx="19" cy="5" r="3" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path d="M8 5h8M17 8v8M8 5l9 12" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="icon-invoice" viewBox="0 0 24 24">
+    <path d="M6 2h9l3 3v17H6z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/>
+    <path d="M9 9h6M9 13h6M9 17h3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+  </symbol>
 </svg>
-
 <!-- ════════════════ NAVBAR ════════════════ -->
-<nav class="site-nav" role="navigation" aria-label="Main navigation">
+<nav class="site-nav" id="site-nav" role="navigation" aria-label="Main navigation">
   <div class="nav-inner">
     <a href="#top" class="nav-logo">
       <div class="nav-logo-mark">Z</div>
       ZohoForge
     </a>
     <div class="nav-links">
-      <a href="#services">Services</a>
+      <a href="#services">Products</a>
+      <a href="#solutions">Solutions</a>
+      <a href="#expertise">Services</a>
+      <a href="#integrations">Integrations</a>
       <a href="#why">Why Us</a>
-      <a href="#process">Process</a>
-      <a href="#industries">Industries</a>
       <a href="#contact">Contact</a>
     </div>
     <a href="https://wa.me/966563478602?text=Hello%2C%20I%20would%20like%20to%20consult%20about%20your%20Zoho%20Solutions." target="_blank" rel="noopener" class="btn btn-primary btn-sm nav-cta" style="background-color: var(--whatsapp-color); background-image: none; border: none; box-shadow: 0 4px 14px rgba(37,211,102,0.3)">
@@ -569,78 +676,124 @@
     </div>
   </div>
   <div class="nav-mobile" id="nav-mobile">
-    <a href="#services">Services</a>
+    <a href="#services">Products</a>
+    <a href="#solutions">Solutions</a>
+    <a href="#expertise">Services</a>
+    <a href="#integrations">Integrations</a>
     <a href="#why">Why Us</a>
-    <a href="#process">Process</a>
-    <a href="#industries">Industries</a>
     <a href="#contact">Contact</a>
     <a href="https://wa.me/966563478602?text=Hello%2C%20I%20would%20like%20to%20consult%20about%20your%20Zoho%20Solutions." target="_blank" rel="noopener" style="color:var(--whatsapp-color);font-weight:600;"><svg width="15" height="15" style="display: inline-block; vertical-align: middle; margin-right: 4px;"><use href="#icon-whatsapp"/></svg> WhatsApp Consultation →</a>
   </div>
 </nav>
-
 <!-- ════════════════ HERO ════════════════ -->
 <section id="top" class="hero">
-
-  <!-- Layered overlay -->
-  <div class="hero-overlay" aria-hidden="true"></div>
-
-  <!-- Content -->
-  <div class="hero-content">
-    <div class="hero-badge">
-      <span class="hero-badge-dot"></span>
-      Certified Zoho Ecosystem Specialists
+  <div class="hero-inner">
+    <!-- Text column -->
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="hero-badge-dot"></span>
+        Certified Zoho Ecosystem Specialists
+      </div>
+      <h1>
+        Run your entire business on<br>
+        <span class="hero-gradient-text">one connected Zoho ecosystem</span>
+      </h1>
+      <p class="hero-sub">
+        We design and build custom Zoho solutions — Creator, CRM, Books, Inventory, Flow and beyond —
+        that eliminate manual work, connect every department, and give leadership real-time visibility
+        into the business.
+      </p>
+      <div class="hero-actions">
+        <a href="https://wa.me/966563478602?text=Hello%2C%20I%20would%20like%20to%20consult%20about%20your%20Zoho%20Solutions." target="_blank" rel="noopener" class="btn-hero-primary">
+          <svg width="18" height="18" style="display: inline-block; vertical-align: middle; margin-right: 4px;"><use href="#icon-whatsapp"/></svg>
+          WhatsApp Consultation
+        </a>
+        <a href="#services" class="btn-hero-outline">
+          Explore Our Work
+        </a>
+      </div>
+      <div class="hero-trust">
+        <span class="trust-chip"><svg width="13" height="13"><use href="#icon-check"/></svg> 9+ Zoho Products</span>
+        <span class="trust-chip"><svg width="13" height="13"><use href="#icon-check"/></svg> End-to-End Delivery</span>
+        <span class="trust-chip"><svg width="13" height="13"><use href="#icon-check"/></svg> Saudi Arabia Based</span>
+      </div>
     </div>
-
-    <h1>
-      Transform your business with<br>
-      <span class="hero-gradient-text">Zoho-powered automation</span>
-    </h1>
-
-    <p class="hero-sub">
-      Custom Zoho solutions that streamline operations, automate workflows,
-      and accelerate growth — from CRM implementation to bespoke business applications.
-    </p>
-
-    <div class="hero-actions">
-      <a href="https://wa.me/966563478602?text=Hello%2C%20I%20would%20like%20to%20consult%20about%20your%20Zoho%20Solutions." target="_blank" rel="noopener" class="btn-hero-primary">
-        <svg width="18" height="18" style="display: inline-block; vertical-align: middle; margin-right: 4px;"><use href="#icon-whatsapp"/></svg>
-        WhatsApp Consultation
-      </a>
-      <a href="#services" class="btn-hero-outline">
-        View Our Services
-      </a>
-    </div>
-
-    <!-- Trust row -->
-    <div class="hero-trust">
-      <span class="trust-chip">
-        <svg width="13" height="13"><use href="#icon-check"/></svg>
-        7+ Zoho Products
-      </span>
-      <span class="trust-chip">
-        <svg width="13" height="13"><use href="#icon-check"/></svg>
-        End-to-End Delivery
-      </span>
-      <span class="trust-chip">
-        <svg width="13" height="13"><use href="#icon-check"/></svg>
-        Saudi Arabia Based
-      </span>
+    <!-- Animated ecosystem visual column -->
+    <div class="hero-visual-col">
+      <div class="orbit-wrap" id="orbit-wrap">
+        <div class="orbit-ring"></div>
+        <div class="orbit-ring r2"></div>
+        <svg class="connector-svg" viewBox="0 0 460 460" aria-hidden="true">
+          <defs>
+            <linearGradient id="lineGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#a78bfa"/>
+              <stop offset="100%" stop-color="#60a5fa"/>
+            </linearGradient>
+          </defs>
+          <path d="M230,230 L230,26"  stroke="url(#lineGrad)"/>
+          <path d="M230,230 L378,72"  stroke="url(#lineGrad)"/>
+          <path d="M230,230 L438,176" stroke="url(#lineGrad)"/>
+          <path d="M230,230 L414,300" stroke="url(#lineGrad)"/>
+          <path d="M230,230 L312,400" stroke="url(#lineGrad)"/>
+          <path d="M230,230 L148,400" stroke="url(#lineGrad)"/>
+          <path d="M230,230 L46,300"  stroke="url(#lineGrad)"/>
+          <path d="M230,230 L22,176"  stroke="url(#lineGrad)"/>
+          <path d="M230,230 L82,72"   stroke="url(#lineGrad)"/>
+        </svg>
+        <div class="orbit-hub">ZohoForge<span>Ecosystem</span></div>
+        <!-- 9 orbiting Zoho product nodes -->
+        <div class="orbit-node" style="top:5.5%; left:50%; animation-delay:0s;">
+          <div class="node-icon" style="--nc:var(--z-creator)"><svg><use href="#icon-layout"/></svg></div>
+          <span>Creator</span>
+        </div>
+        <div class="orbit-node" style="top:15.5%; left:82%; animation-delay:.4s;">
+          <div class="node-icon" style="--nc:var(--z-crm)"><svg><use href="#icon-briefcase"/></svg></div>
+          <span>CRM</span>
+        </div>
+        <div class="orbit-node" style="top:38%; left:95%; animation-delay:.8s;">
+          <div class="node-icon" style="--nc:var(--z-books)"><svg><use href="#icon-invoice"/></svg></div>
+          <span>Books</span>
+        </div>
+        <div class="orbit-node" style="top:65%; left:90%; animation-delay:1.2s;">
+          <div class="node-icon" style="--nc:var(--z-inv)"><svg><use href="#icon-boxes"/></svg></div>
+          <span>Inventory</span>
+        </div>
+        <div class="orbit-node" style="top:87%; left:68%; animation-delay:1.6s;">
+          <div class="node-icon" style="--nc:var(--z-flow)"><svg><use href="#icon-workflow"/></svg></div>
+          <span>Flow</span>
+        </div>
+        <div class="orbit-node" style="top:87%; left:32%; animation-delay:2s;">
+          <div class="node-icon" style="--nc:var(--z-desk)"><svg><use href="#icon-headset"/></svg></div>
+          <span>Desk</span>
+        </div>
+        <div class="orbit-node" style="top:65%; left:10%; animation-delay:2.4s;">
+          <div class="node-icon" style="--nc:var(--z-people)"><svg><use href="#icon-users"/></svg></div>
+          <span>People</span>
+        </div>
+        <div class="orbit-node" style="top:38%; left:5%; animation-delay:2.8s;">
+          <div class="node-icon" style="--nc:var(--z-analytics)"><svg><use href="#icon-barchart"/></svg></div>
+          <span>Analytics</span>
+        </div>
+        <div class="orbit-node" style="top:15.5%; left:18%; animation-delay:3.2s;">
+          <div class="node-icon" style="--nc:var(--text-muted)"><svg><use href="#icon-plug"/></svg></div>
+          <span>3rd-Party</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
-
-<!-- ════════════════ SERVICES ════════════════ -->
+<!-- ════════════════ PRODUCTS (formerly Services) ════════════════ -->
 <section id="services" class="section">
   <div class="container">
-    <span class="label">Our Services</span>
-    <h2 style="max-width:540px;margin-bottom:40px;">Everything you need across the Zoho stack</h2>
-    
-    <div class="grid grid-3">
+    <span class="label reveal">Our Products</span>
+    <h2 class="section-head reveal">Deep implementation across every core Zoho product</h2>
+    <p class="lead reveal" style="max-width:600px;margin-bottom:16px;">Not a reseller — a build partner. Every module below is engineered around your actual workflow, not a generic template.</p>
 
+    <div class="grid grid-3">
       <!-- Creator -->
-      <div class="card">
-        <div class="zoho-logo-box"><img src="Creator.png"/></div>
-        <h3>Zoho Creator Development</h3>
+      <div class="card reveal">
+        <div class="zoho-badge" style="--bc1:var(--z-creator);--bc2:#ffcf7d;">C</div>
+        <h3 class="mt-4">Zoho Creator Development</h3>
         <p class="text-muted mt-4" style="font-size:13px;">Build custom applications tailored to your business processes.</p>
         <ul style="margin-top:14px;">
           <li class="check-item"><span class="check-icon"><svg><use href="#icon-check"/></svg></span><span>Asset Management Systems</span></li>
@@ -654,16 +807,15 @@
           <div class="preview-header"><span>Creator Form View</span><span>LIVE</span></div>
           <div class="preview-body">
             <div class="preview-text-line"><span>Request ID #7284</span><span style="color:var(--primary);">Processing</span></div>
-            <div class="preview-bar"><div class="preview-fill" style="width: 75%;"></div></div>
+            <div class="preview-bar"><div class="preview-fill" data-fill="75" style="width:0;"></div></div>
             <div class="preview-text-line" style="font-size: 10px; color: var(--text-light);"><span>Updated 2m ago</span></div>
           </div>
         </div>
       </div>
-
       <!-- CRM -->
-      <div class="card">
-        <div class="zoho-logo-box"><img src="crm.png" /></div>
-        <h3>Zoho CRM Implementation</h3>
+      <div class="card reveal">
+        <div class="zoho-badge" style="--bc1:var(--z-crm);--bc2:#ff8a9c;">CRM</div>
+        <h3 class="mt-4">Zoho CRM Implementation</h3>
         <p class="text-muted mt-4" style="font-size:13px;">Manage your leads, customers, and sales pipeline efficiently.</p>
         <ul style="margin-top:14px;">
           <li class="check-item"><span class="check-icon"><svg><use href="#icon-check"/></svg></span><span>Lead Management</span></li>
@@ -676,16 +828,15 @@
           <div class="preview-header"><span>Sales Pipeline</span><span>CRM</span></div>
           <div class="preview-body">
             <div class="preview-text-line"><span>Lead Qualification</span><span style="color: #25d366;">$12,400</span></div>
-            <div class="preview-bar"><div class="preview-fill" style="width: 45%; background-color:#25d366;"></div></div>
+            <div class="preview-bar"><div class="preview-fill" data-fill="45" style="width:0; background-color:#25d366;"></div></div>
             <div class="preview-text-line" style="font-size: 10px; color: var(--text-light);"><span>8 active negotiations</span></div>
           </div>
         </div>
       </div>
-
       <!-- Books -->
-      <div class="card">
-        <div class="zoho-logo-box"><img src="books.png" /></div>
-        <h3>Zoho Books Automation</h3>
+      <div class="card reveal">
+        <div class="zoho-badge" style="--bc1:var(--z-books);--bc2:#7fc4ff;">B</div>
+        <h3 class="mt-4">Zoho Books Automation</h3>
         <p class="text-muted mt-4" style="font-size:13px;">Automate your finance operations end to end.</p>
         <ul style="margin-top:14px;">
           <li class="check-item"><span class="check-icon"><svg><use href="#icon-check"/></svg></span><span>Invoice Automation</span></li>
@@ -698,16 +849,15 @@
           <div class="preview-header"><span>Invoices Overview</span><span>Books</span></div>
           <div class="preview-body">
             <div class="preview-text-line"><span>Paid / Pending</span><span>92% Collected</span></div>
-            <div class="preview-bar"><div class="preview-fill" style="width: 92%; background-color:#009EDA;"></div></div>
+            <div class="preview-bar"><div class="preview-fill" data-fill="92" style="width:0; background-color:#009EDA;"></div></div>
             <div class="preview-text-line" style="font-size: 10px; color: var(--text-light);"><span>VAT Compliant</span></div>
           </div>
         </div>
       </div>
-
       <!-- Inventory -->
-      <div class="card">
-        <div class="zoho-logo-box"><img src="Inventory.png" /></div>
-        <h3>Zoho Inventory Solutions</h3>
+      <div class="card reveal">
+        <div class="zoho-badge" style="--bc1:var(--z-inv);--bc2:#ffb28f;">I</div>
+        <h3 class="mt-4">Zoho Inventory Solutions</h3>
         <p class="text-muted mt-4" style="font-size:13px;">Track inventory in real-time across locations.</p>
         <ul style="margin-top:14px;">
           <li class="check-item"><span class="check-icon"><svg><use href="#icon-check"/></svg></span><span>Inventory Synchronization</span></li>
@@ -720,16 +870,15 @@
           <div class="preview-header"><span>Warehouse Stock</span><span>Inventory</span></div>
           <div class="preview-body">
             <div class="preview-text-line"><span>SKU-4912 Reorder</span><span style="color: #E8580C;">Low Stock</span></div>
-            <div class="preview-bar"><div class="preview-fill" style="width: 15%; background-color:#E8580C;"></div></div>
+            <div class="preview-bar"><div class="preview-fill" data-fill="15" style="width:0; background-color:#E8580C;"></div></div>
             <div class="preview-text-line" style="font-size: 10px; color: var(--text-light);"><span>Auto-PO Triggered</span></div>
           </div>
         </div>
       </div>
-
       <!-- Bigin -->
-      <div class="card">
-        <div class="zoho-logo-box"><img src="Bigint.png" /></div>
-        <h3>Bigin by Zoho CRM</h3>
+      <div class="card reveal">
+        <div class="zoho-badge" style="--bc1:var(--z-bigin);--bc2:#8fe8cf;">Bi</div>
+        <h3 class="mt-4">Bigin by Zoho CRM</h3>
         <p class="text-muted mt-4" style="font-size:13px;">Pipeline-centric CRM built for small businesses.</p>
         <ul style="margin-top:14px;">
           <li class="check-item"><span class="check-icon"><svg><use href="#icon-check"/></svg></span><span>Pipeline Management</span></li>
@@ -742,16 +891,15 @@
           <div class="preview-header"><span>Deals Pipeline</span><span>Bigin</span></div>
           <div class="preview-body">
             <div class="preview-text-line"><span>Won Opportunities</span><span style="color:#3bbf9f;">Completed</span></div>
-            <div class="preview-bar"><div class="preview-fill" style="width: 100%; background-color:#3bbf9f;"></div></div>
+            <div class="preview-bar"><div class="preview-fill" data-fill="100" style="width:0; background-color:#3bbf9f;"></div></div>
             <div class="preview-text-line" style="font-size: 10px; color: var(--text-light);"><span>Sync with Books active</span></div>
           </div>
         </div>
       </div>
-
       <!-- Flow -->
-      <div class="card">
-        <div class="zoho-logo-box"><img src="flow.png" /></div>
-        <h3>Zoho Flow &amp; Integration</h3>
+      <div class="card reveal">
+        <div class="zoho-badge" style="--bc1:var(--z-flow);--bc2:#c4b3fb;">F</div>
+        <h3 class="mt-4">Zoho Flow &amp; Integration</h3>
         <p class="text-muted mt-4" style="font-size:13px;">Connect all your business systems seamlessly.</p>
         <ul style="margin-top:14px;">
           <li class="check-item"><span class="check-icon"><svg><use href="#icon-check"/></svg></span><span>API Integrations</span></li>
@@ -764,33 +912,102 @@
           <div class="preview-header"><span>Integration Task</span><span>Flow</span></div>
           <div class="preview-body">
             <div class="preview-text-line"><span>Webhook to DB</span><span style="color:#f5a623;">Active</span></div>
-            <div class="preview-bar"><div class="preview-fill" style="width: 100%; background-color:#f5a623;"></div></div>
+            <div class="preview-bar"><div class="preview-fill" data-fill="100" style="width:0; background-color:#f5a623;"></div></div>
             <div class="preview-text-line" style="font-size: 10px; color: var(--text-light);"><span>No failures (last 30d)</span></div>
           </div>
         </div>
       </div>
-
     </div>
   </div>
 </section>
-
+<!-- ════════════════ ZOHO SOLUTIONS (product showcase / logos) ════════════════ -->
+<section id="solutions" class="section section-alt">
+  <div class="container">
+    <div class="section-head center">
+      <span class="label reveal">Zoho Solutions</span>
+      <h2 class="reveal">One partner, the entire Zoho suite</h2>
+      <p class="lead reveal mt-4">Whichever combination of Zoho apps your business runs on, we design, configure and connect them into a single source of truth.</p>
+    </div>
+    <div class="solutions-grid">
+      <div class="solution-card reveal" style="--sc:var(--z-creator); --sbg:#fdf1de;">
+        <div class="solution-badge"><svg><use href="#icon-layout"/></svg></div>
+        <div class="solution-name">Zoho Creator</div>
+        <p class="solution-desc">Low-code apps built around your exact operational workflow.</p>
+        <a href="#contact" class="solution-learn">Learn More <svg><use href="#icon-arrow-right"/></svg></a>
+      </div>
+      <div class="solution-card reveal" style="--sc:var(--z-crm); --sbg:#fbe3e7;">
+        <div class="solution-badge"><svg><use href="#icon-briefcase"/></svg></div>
+        <div class="solution-name">Zoho CRM</div>
+        <p class="solution-desc">Sales pipelines, lead scoring and blueprints tuned to your sales cycle.</p>
+        <a href="#contact" class="solution-learn">Learn More <svg><use href="#icon-arrow-right"/></svg></a>
+      </div>
+      <div class="solution-card reveal" style="--sc:var(--z-books); --sbg:#e3f1fc;">
+        <div class="solution-badge"><svg><use href="#icon-invoice"/></svg></div>
+        <div class="solution-name">Zoho Books</div>
+        <p class="solution-desc">Invoicing, VAT-compliant reporting and finance automation.</p>
+        <a href="#contact" class="solution-learn">Learn More <svg><use href="#icon-arrow-right"/></svg></a>
+      </div>
+      <div class="solution-card reveal" style="--sc:var(--z-inv); --sbg:#ffe9e0;">
+        <div class="solution-badge"><svg><use href="#icon-boxes"/></svg></div>
+        <div class="solution-name">Zoho Inventory</div>
+        <p class="solution-desc">Real-time multi-warehouse stock tracking and auto-reordering.</p>
+        <a href="#contact" class="solution-learn">Learn More <svg><use href="#icon-arrow-right"/></svg></a>
+      </div>
+      <div class="solution-card reveal" style="--sc:var(--z-flow); --sbg:#ede7fc;">
+        <div class="solution-badge"><svg><use href="#icon-workflow"/></svg></div>
+        <div class="solution-name">Zoho Flow</div>
+        <p class="solution-desc">No-code integration between Zoho and third-party platforms.</p>
+        <a href="#contact" class="solution-learn">Learn More <svg><use href="#icon-arrow-right"/></svg></a>
+      </div>
+      <div class="solution-card reveal" style="--sc:var(--z-desk); --sbg:#e0f7fa;">
+        <div class="solution-badge"><svg><use href="#icon-headset"/></svg></div>
+        <div class="solution-name">Zoho Desk</div>
+        <p class="solution-desc">Ticketing, SLAs and multi-channel customer support desks.</p>
+        <a href="#contact" class="solution-learn">Learn More <svg><use href="#icon-arrow-right"/></svg></a>
+      </div>
+      <div class="solution-card reveal" style="--sc:var(--z-people); --sbg:#e5f4e6;">
+        <div class="solution-badge"><svg><use href="#icon-users"/></svg></div>
+        <div class="solution-name">Zoho People</div>
+        <p class="solution-desc">HR workflows: onboarding, leave, attendance and appraisals.</p>
+        <a href="#contact" class="solution-learn">Learn More <svg><use href="#icon-arrow-right"/></svg></a>
+      </div>
+      <div class="solution-card reveal" style="--sc:var(--z-analytics); --sbg:#fbf3d9;">
+        <div class="solution-badge"><svg><use href="#icon-barchart"/></svg></div>
+        <div class="solution-name">Zoho Analytics</div>
+        <p class="solution-desc">Cross-app BI dashboards that turn raw data into decisions.</p>
+        <a href="#contact" class="solution-learn">Learn More <svg><use href="#icon-arrow-right"/></svg></a>
+      </div>
+      <div class="solution-card reveal" style="--sc:var(--z-sign); --sbg:#ece5fd;">
+        <div class="solution-badge"><svg><use href="#icon-signature"/></svg></div>
+        <div class="solution-name">Zoho Sign</div>
+        <p class="solution-desc">Legally binding e-signatures embedded into your approval flow.</p>
+        <a href="#contact" class="solution-learn">Learn More <svg><use href="#icon-arrow-right"/></svg></a>
+      </div>
+      <div class="solution-card reveal" style="--sc:var(--z-projects); --sbg:#e0f3f5;">
+        <div class="solution-badge"><svg><use href="#icon-kanban"/></svg></div>
+        <div class="solution-name">Zoho Projects</div>
+        <p class="solution-desc">Task boards, timesheets and milestone tracking for delivery teams.</p>
+        <a href="#contact" class="solution-learn">Learn More <svg><use href="#icon-arrow-right"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
 <!-- ════════════════ WHY US ════════════════ -->
-<section id="why" class="section section-alt">
+<section id="why" class="section">
   <div class="container">
     <div class="why-layout">
       <div class="why-left">
-        <span class="label">Why Choose Us</span>
-        <h2 style="max-width:420px;">A partner that ships outcomes, not just deployments.</h2>
-        <p class="text-muted mt-6" style="font-size:15px;line-height:1.75;">We combine deep domain knowledge with hands-on Zoho expertise to deliver solutions that actually move the needle.</p>
+        <span class="label reveal">Why Choose Us</span>
+        <h2 class="reveal" style="max-width:420px;">A partner that ships outcomes, not just deployments.</h2>
+        <p class="text-muted mt-6 reveal" style="font-size:15px;line-height:1.75;">We combine deep domain knowledge with hands-on Zoho expertise to deliver solutions that actually move the needle.</p>
         <div class="why-stat-row">
-          <div class="why-stat"><span class="why-stat-num text-gradient">50+</span><span class="why-stat-label">Projects Delivered</span></div>
-          <div class="why-stat"><span class="why-stat-num text-gradient">7+</span><span class="why-stat-label">Zoho Products</span></div>
-          <div class="why-stat"><span class="why-stat-num text-gradient">100%</span><span class="why-stat-label">Client Satisfaction</span></div>
+          <div class="why-stat reveal"><span class="why-stat-num text-gradient" data-counter="50" data-suffix="+">0</span><span class="why-stat-label">Projects Delivered</span></div>
+          <div class="why-stat reveal"><span class="why-stat-num text-gradient" data-counter="9" data-suffix="+">0</span><span class="why-stat-label">Zoho Products</span></div>
+          <div class="why-stat reveal"><span class="why-stat-num text-gradient" data-counter="100" data-suffix="%">0</span><span class="why-stat-label">Client Satisfaction</span></div>
         </div>
       </div>
       <div class="grid grid-2" style="gap:16px;">
-
-        <div class="why-card">
+        <div class="why-card reveal">
           <div class="why-icon-box" style="background:#eef3ff;">
             <svg viewBox="0 0 24 24" fill="none" stroke="#0063D1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>
@@ -798,12 +1015,9 @@
           </div>
           <h3>Industry Expertise</h3>
           <p class="text-muted">We understand logistics, retail, real estate, operations, and finance workflows inside out.</p>
-          <div class="why-tags">
-            <span class="why-tag">Logistics</span><span class="why-tag">Finance</span><span class="why-tag">Retail</span>
-          </div>
+          <div class="why-tags"><span class="why-tag">Logistics</span><span class="why-tag">Finance</span><span class="why-tag">Retail</span></div>
         </div>
-
-        <div class="why-card">
+        <div class="why-card reveal">
           <div class="why-icon-box" style="background:#edfaf4;">
             <svg viewBox="0 0 24 24" fill="none" stroke="#00875A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/><path d="M16.24 7.76a6 6 0 0 1 0 8.49m-8.48-.01a6 6 0 0 1 0-8.49"/>
@@ -811,12 +1025,9 @@
           </div>
           <h3>End-to-End Solutions</h3>
           <p class="text-muted">From requirement gathering to deployment, training, and ongoing support.</p>
-          <div class="why-tags">
-            <span class="why-tag">Design</span><span class="why-tag">Build</span><span class="why-tag">Support</span>
-          </div>
+          <div class="why-tags"><span class="why-tag">Design</span><span class="why-tag">Build</span><span class="why-tag">Support</span></div>
         </div>
-
-        <div class="why-card">
+        <div class="why-card reveal">
           <div class="why-icon-box" style="background:#f5f0ff;">
             <svg viewBox="0 0 24 24" fill="none" stroke="#6C4CF1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/>
@@ -825,12 +1036,9 @@
           </div>
           <h3>Zoho Ecosystem Specialists</h3>
           <p class="text-muted">Deep expertise across Creator, CRM, Books, Inventory, Analytics, and Flow.</p>
-          <div class="why-tags">
-            <span class="why-tag">Creator</span><span class="why-tag">CRM</span><span class="why-tag">Books</span>
-          </div>
+          <div class="why-tags"><span class="why-tag">Creator</span><span class="why-tag">CRM</span><span class="why-tag">Books</span></div>
         </div>
-
-        <div class="why-card">
+        <div class="why-card reveal">
           <div class="why-icon-box" style="background:#fff8ed;">
             <svg viewBox="0 0 24 24" fill="none" stroke="#F5A623" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
@@ -838,24 +1046,101 @@
           </div>
           <h3>Scalable Solutions</h3>
           <p class="text-muted">Applications engineered for future growth, high load, and evolving business needs.</p>
-          <div class="why-tags">
-            <span class="why-tag">Growth-ready</span><span class="why-tag">Modular</span>
-          </div>
+          <div class="why-tags"><span class="why-tag">Growth-ready</span><span class="why-tag">Modular</span></div>
         </div>
-
       </div>
     </div>
   </div>
 </section>
-
+<!-- ════════════════ EXPERTISE / SERVICES ════════════════ -->
+<section id="expertise" class="section section-alt">
+  <div class="container">
+    <div class="section-head center">
+      <span class="label reveal">What We Do</span>
+      <h2 class="reveal">Full-spectrum Zoho engineering, under one roof</h2>
+      <p class="lead reveal mt-4">From first workshop to Deluge scripting to day-two support — every engagement type our clients ask for, in one place.</p>
+    </div>
+    <div class="expertise-grid">
+      <div class="expertise-card reveal">
+        <div class="expertise-icon"><svg><use href="#icon-lightbulb"/></svg></div>
+        <div class="expertise-title">Zoho Consulting</div>
+        <p class="expertise-desc">Process audits and platform roadmaps before a single line is built.</p>
+      </div>
+      <div class="expertise-card reveal">
+        <div class="expertise-icon"><svg><use href="#icon-clipboard"/></svg></div>
+        <div class="expertise-title">Zoho Implementation</div>
+        <p class="expertise-desc">End-to-end rollout, data migration, and org-wide configuration.</p>
+      </div>
+      <div class="expertise-card reveal">
+        <div class="expertise-icon"><svg><use href="#icon-layout"/></svg></div>
+        <div class="expertise-title">Zoho Creator Development</div>
+        <p class="expertise-desc">Custom low-code apps mapped to your exact operations.</p>
+      </div>
+      <div class="expertise-card reveal">
+        <div class="expertise-icon"><svg><use href="#icon-briefcase"/></svg></div>
+        <div class="expertise-title">CRM Development</div>
+        <p class="expertise-desc">Custom modules, blueprints and scoring models inside Zoho CRM.</p>
+      </div>
+      <div class="expertise-card reveal">
+        <div class="expertise-icon"><svg><use href="#icon-workflow"/></svg></div>
+        <div class="expertise-title">Workflow Automation</div>
+        <p class="expertise-desc">Multi-stage approvals, escalations, and notification chains.</p>
+      </div>
+      <div class="expertise-card reveal">
+        <div class="expertise-icon"><svg><use href="#icon-code"/></svg></div>
+        <div class="expertise-title">Deluge Development</div>
+        <p class="expertise-desc">Custom scripting for logic no out-of-the-box feature can cover.</p>
+      </div>
+      <div class="expertise-card reveal">
+        <div class="expertise-icon"><svg><use href="#icon-plug"/></svg></div>
+        <div class="expertise-title">API Integrations</div>
+        <p class="expertise-desc">REST APIs, webhooks and custom connectors between systems.</p>
+      </div>
+      <div class="expertise-card reveal">
+        <div class="expertise-icon"><svg><use href="#icon-globe"/></svg></div>
+        <div class="expertise-title">Third-Party Integrations</div>
+        <p class="expertise-desc">Shopify, Stripe, SAP, Oracle and more, wired into Zoho natively.</p>
+      </div>
+      <div class="expertise-card reveal">
+        <div class="expertise-icon"><svg><use href="#icon-cpu"/></svg></div>
+        <div class="expertise-title">AI Automation</div>
+        <p class="expertise-desc">AI-assisted document processing, scoring and smart routing.</p>
+      </div>
+      <div class="expertise-card reveal">
+        <div class="expertise-icon"><svg><use href="#icon-sparkles"/></svg></div>
+        <div class="expertise-title">Business Process Automation</div>
+        <p class="expertise-desc">Turning multi-step manual processes into hands-free flows.</p>
+      </div>
+      <div class="expertise-card reveal">
+        <div class="expertise-icon"><svg><use href="#icon-layers"/></svg></div>
+        <div class="expertise-title">ERP Solutions</div>
+        <p class="expertise-desc">Zoho-native ERP builds spanning finance, ops and inventory.</p>
+      </div>
+      <div class="expertise-card reveal">
+        <div class="expertise-icon"><svg><use href="#icon-boxes"/></svg></div>
+        <div class="expertise-title">Inventory Management</div>
+        <p class="expertise-desc">Multi-location stock control with automated reorder rules.</p>
+      </div>
+      <div class="expertise-card reveal">
+        <div class="expertise-icon"><svg><use href="#icon-invoice"/></svg></div>
+        <div class="expertise-title">Finance Automation</div>
+        <p class="expertise-desc">Invoicing, reconciliation, and VAT-compliant reporting flows.</p>
+      </div>
+      <div class="expertise-card reveal">
+        <div class="expertise-icon"><svg><use href="#icon-shield-check"/></svg></div>
+        <div class="expertise-title">Support &amp; Maintenance</div>
+        <p class="expertise-desc">Dedicated post-launch support, monitoring and enhancements.</p>
+      </div>
+    </div>
+  </div>
+</section>
 <!-- ════════════════ PROCESS ════════════════ -->
 <section id="process" class="section">
   <div class="container">
-    <span class="label">Our Process</span>
-    <h2 style="margin-bottom:48px;">From idea to impact in five steps</h2>
+    <span class="label reveal">Our Process</span>
+    <h2 class="reveal" style="margin-bottom:48px;">From idea to impact in five steps</h2>
     <div class="process-track">
-
-      <div class="process-step">
+      <div class="process-step reveal">
         <div class="process-icon-wrap" style="--icon-color:#0063D1;--icon-bg:#eef3ff;">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
@@ -865,12 +1150,10 @@
         <h3 class="process-title">Business Requirement Analysis</h3>
         <p class="process-desc text-muted">We listen, map your workflows, and document every requirement before writing a line of code.</p>
       </div>
-
       <div class="process-connector" aria-hidden="true">
         <svg viewBox="0 0 24 8" fill="none"><path d="M0 4 H20 M16 1 L20 4 L16 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </div>
-
-      <div class="process-step">
+      <div class="process-step reveal">
         <div class="process-icon-wrap" style="--icon-color:#6C4CF1;--icon-bg:#f5f0ff;">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/>
@@ -881,12 +1164,10 @@
         <h3 class="process-title">Solution Architecture</h3>
         <p class="process-desc text-muted">We design the data model, module structure, and integration blueprint before any build starts.</p>
       </div>
-
       <div class="process-connector" aria-hidden="true">
         <svg viewBox="0 0 24 8" fill="none"><path d="M0 4 H20 M16 1 L20 4 L16 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </div>
-
-      <div class="process-step">
+      <div class="process-step reveal">
         <div class="process-icon-wrap" style="--icon-color:#E8580C;--icon-bg:#fff2ec;">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
@@ -897,12 +1178,10 @@
         <h3 class="process-title">Development &amp; Integration</h3>
         <p class="process-desc text-muted">Custom Deluge scripting, API connections, and UI built precisely to your spec.</p>
       </div>
-
       <div class="process-connector" aria-hidden="true">
         <svg viewBox="0 0 24 8" fill="none"><path d="M0 4 H20 M16 1 L20 4 L16 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </div>
-
-      <div class="process-step">
+      <div class="process-step reveal">
         <div class="process-icon-wrap" style="--icon-color:#00875A;--icon-bg:#edfaf4;">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v11m0 0H5m4 0h10m0-11v11m0 0h-4"/>
@@ -913,12 +1192,10 @@
         <h3 class="process-title">Testing &amp; Deployment</h3>
         <p class="process-desc text-muted">End-to-end QA, UAT with your team, and a smooth zero-downtime go-live.</p>
       </div>
-
       <div class="process-connector" aria-hidden="true">
         <svg viewBox="0 0 24 8" fill="none"><path d="M0 4 H20 M16 1 L20 4 L16 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </div>
-
-      <div class="process-step">
+      <div class="process-step reveal">
         <div class="process-icon-wrap" style="--icon-color:#009EDA;--icon-bg:#e8f7fd;">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M22 10v6M2 10l10 5 10-5-10-5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/>
@@ -928,63 +1205,99 @@
         <h3 class="process-title">Training &amp; Support</h3>
         <p class="process-desc text-muted">Hands-on user training, documentation, and dedicated post-launch support.</p>
       </div>
-
     </div>
   </div>
 </section>
-
 <!-- ════════════════ INDUSTRIES ════════════════ -->
 <section id="industries" class="section section-alt">
   <div class="container">
-    <div style="text-align:center;margin-bottom:40px;">
-      <span class="label" style="text-align:center;">Industries We Serve</span>
-      <h2>Built for operations-heavy businesses</h2>
+    <div class="section-head center">
+      <span class="label reveal">Industries We Serve</span>
+      <h2 class="reveal">Built for operations-heavy businesses</h2>
     </div>
     <div class="grid grid-7" style="gap:14px;">
-      <div class="industry-card">
+      <div class="industry-card reveal">
         <div class="industry-icon"><svg><use href="#icon-cart"/></svg></div>
         <span style="font-size:12px;font-weight:500;line-height:1.3;">E-Commerce &amp; Retail</span>
       </div>
-      <div class="industry-card">
+      <div class="industry-card reveal">
         <div class="industry-icon"><svg><use href="#icon-factory"/></svg></div>
         <span style="font-size:12px;font-weight:500;line-height:1.3;">Manufacturing</span>
       </div>
-      <div class="industry-card">
+      <div class="industry-card reveal">
         <div class="industry-icon"><svg><use href="#icon-wrench"/></svg></div>
         <span style="font-size:12px;font-weight:500;line-height:1.3;">Facility Management</span>
       </div>
-      <div class="industry-card">
+      <div class="industry-card reveal">
         <div class="industry-icon"><svg><use href="#icon-sparkles"/></svg></div>
         <span style="font-size:12px;font-weight:500;line-height:1.3;">Service Organizations</span>
       </div>
-      <div class="industry-card">
+      <div class="industry-card reveal">
         <div class="industry-icon"><svg><use href="#icon-boxes"/></svg></div>
         <span style="font-size:12px;font-weight:500;line-height:1.3;">SMEs &amp; Enterprises</span>
       </div>
     </div>
   </div>
 </section>
-
-<!-- ════════════════ BENEFITS ════════════════ -->
-<section class="section">
+<!-- ════════════════ INTEGRATIONS ════════════════ -->
+<section id="integrations" class="section">
   <div class="container">
-    <span class="label">Client Benefits</span>
-    <h2 style="margin-bottom:48px;">Measurable results, faster</h2>
+    <div class="section-head center">
+      <span class="label reveal">Integrations</span>
+      <h2 class="reveal">Zoho, connected to everything else you run</h2>
+      <p class="lead reveal mt-4">Your Zoho suite doesn't operate in isolation. We build the bridges to the tools your teams already use.</p>
+    </div>
+    <div class="integration-panel">
+      <div class="integration-col reveal">
+        <span class="integration-col-title">Zoho Suite</span>
+        <div class="integration-chip"><span class="integration-dot" style="--ic:var(--z-creator)"></span>Zoho Creator</div>
+        <div class="integration-chip"><span class="integration-dot" style="--ic:var(--z-crm)"></span>Zoho CRM</div>
+        <div class="integration-chip"><span class="integration-dot" style="--ic:var(--z-books)"></span>Zoho Books</div>
+        <div class="integration-chip"><span class="integration-dot" style="--ic:var(--z-inv)"></span>Zoho Inventory</div>
+        <div class="integration-chip"><span class="integration-dot" style="--ic:var(--z-flow)"></span>Zoho Flow</div>
+      </div>
+      <div class="integration-hub-col reveal">
+        <div class="flow-line"></div>
+        <div class="integration-hub">SYNC<span>Real-time</span></div>
+        <div class="flow-line rev"></div>
+      </div>
+      <div class="integration-col reveal">
+        <span class="integration-col-title">Third-Party Platforms</span>
+        <div class="integration-chip"><span class="integration-dot" style="--ic:#00875A"></span>Microsoft 365</div>
+        <div class="integration-chip"><span class="integration-dot" style="--ic:#0063D1"></span>Google Workspace</div>
+        <div class="integration-chip"><span class="integration-dot" style="--ic:#25d366"></span>WhatsApp Business</div>
+        <div class="integration-chip"><span class="integration-dot" style="--ic:#95BF47"></span>Shopify</div>
+        <div class="integration-chip"><span class="integration-dot" style="--ic:#635BFF"></span>Stripe</div>
+        <div class="integration-chip"><span class="integration-dot" style="--ic:#003087"></span>PayPal</div>
+        <div class="integration-chip"><span class="integration-dot" style="--ic:#2CA01C"></span>QuickBooks</div>
+        <div class="integration-chip"><span class="integration-dot" style="--ic:#0FAAFF"></span>SAP</div>
+        <div class="integration-chip"><span class="integration-dot" style="--ic:#F80000"></span>Oracle</div>
+        <div class="integration-chip"><span class="integration-dot" style="--ic:#4A154B"></span>Slack</div>
+        <div class="integration-chip"><span class="integration-dot" style="--ic:#6264A7"></span>Microsoft Teams</div>
+        <div class="integration-chip"><span class="integration-dot" style="--ic:#10A37F"></span>OpenAI</div>
+        <div class="integration-chip"><span class="integration-dot" style="--ic:var(--text-muted)"></span>REST APIs &amp; Webhooks</div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ════════════════ BENEFITS ════════════════ -->
+<section class="section section-alt">
+  <div class="container">
+    <span class="label reveal">Client Benefits</span>
+    <h2 class="reveal" style="margin-bottom:48px;">Measurable results, faster</h2>
     <div class="grid grid-3" style="gap:20px;">
-
-      <div class="benefit-card">
+      <div class="benefit-card reveal">
         <div class="benefit-icon-wrap" style="--bc:#eef3ff;--bic:#0063D1;">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/>
             <line x1="23" y1="11" x2="17" y2="11"/><line x1="23" y1="7" x2="19" y2="7"/>
           </svg>
         </div>
-        <div class="benefit-stat text-gradient">70%</div>
+        <div class="benefit-stat text-gradient" data-counter="70" data-suffix="%">0</div>
         <h3 class="benefit-title">Reduction in manual work</h3>
         <p class="benefit-desc text-muted">Automate repetitive data entry, approvals, and reporting that used to take hours daily.</p>
       </div>
-
-      <div class="benefit-card">
+      <div class="benefit-card reveal">
         <div class="benefit-icon-wrap" style="--bc:#edfaf4;--bic:#00875A;">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/>
@@ -994,20 +1307,18 @@
         <h3 class="benefit-title">Operational efficiency</h3>
         <p class="benefit-desc text-muted">Streamlined workflows mean your team spends time on work that matters, not process overhead.</p>
       </div>
-
-      <div class="benefit-card">
+      <div class="benefit-card reveal">
         <div class="benefit-icon-wrap" style="--bc:#fff2ec;--bic:#E8580C;">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
             <path d="M9 12l2 2 4-4"/>
           </svg>
         </div>
-        <div class="benefit-stat text-gradient">100%</div>
+        <div class="benefit-stat text-gradient" data-counter="100" data-suffix="%">0</div>
         <h3 class="benefit-title">Improved data accuracy</h3>
         <p class="benefit-desc text-muted">Validation rules and automated sync eliminate errors from manual entry across all Zoho apps.</p>
       </div>
-
-      <div class="benefit-card">
+      <div class="benefit-card reveal">
         <div class="benefit-icon-wrap" style="--bc:#f5f0ff;--bic:#6C4CF1;">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="10"/>
@@ -1019,8 +1330,7 @@
         <h3 class="benefit-title">Automated approval workflows</h3>
         <p class="benefit-desc text-muted">Multi-stage approvals with notifications, escalations, and audit trails — fully hands-free.</p>
       </div>
-
-      <div class="benefit-card">
+      <div class="benefit-card reveal">
         <div class="benefit-icon-wrap" style="--bc:#e8f7fd;--bic:#009EDA;">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
@@ -1031,8 +1341,7 @@
         <h3 class="benefit-title">Real-time business visibility</h3>
         <p class="benefit-desc text-muted">Live dashboards and reports give leadership instant insight into every business function.</p>
       </div>
-
-      <div class="benefit-card">
+      <div class="benefit-card reveal">
         <div class="benefit-icon-wrap" style="--bc:#fff8ed;--bic:#F5A623;">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
@@ -1042,23 +1351,21 @@
         <h3 class="benefit-title">Faster decision making</h3>
         <p class="benefit-desc text-muted">Connected data across all Zoho apps means managers always have the context to act quickly.</p>
       </div>
-
     </div>
   </div>
 </section>
-
 <!-- ════════════════ CONTACT ════════════════ -->
 <section id="contact" class="section" style="background:radial-gradient(900px 500px at 15% 0%,rgba(120,100,230,0.10),transparent 60%),radial-gradient(700px 400px at 90% 30%,rgba(245,166,35,0.08),transparent 60%),linear-gradient(to bottom, var(--bg) 0%, var(--bg-alt) 100%);">
   <div class="container">
-    <span class="label">Contact Us</span>
-    <h2 style="max-width:540px;margin-bottom:40px;">Ready to optimize your processes?</h2>
-    
+    <span class="label reveal">Contact Us</span>
+    <h2 class="reveal" style="max-width:540px;margin-bottom:40px;">Ready to optimize your processes?</h2>
+
     <div class="grid grid-2 two-col">
-      <div>
+      <div class="reveal">
         <p class="text-muted" style="margin-bottom: 24px;">
           Reach out today. We will assess your requirements and show you how Zoho can automate your manual operations.
         </p>
-        
+
         <a href="https://wa.me/966563478602?text=Hello%2C%20I%20would%20like%20to%20consult%20about%20your%20Zoho%20Solutions." target="_blank" rel="noopener" class="contact-row">
           <div class="contact-icon" style="background: rgba(37,211,102,0.15); color: var(--whatsapp-color);">
             <svg width="18" height="18"><use href="#icon-whatsapp"/></svg>
@@ -1068,17 +1375,15 @@
             <p style="font-size: 13px; color: var(--text-muted);">Chat with us instantly</p>
           </div>
         </a>
-
         <div class="contact-row">
           <div class="contact-icon">
             <svg width="18" height="18"><use href="#icon-mail"/></svg>
           </div>
           <div>
             <h4 style="font-size: 14px; font-weight:600;">Email</h4>
-            <p style="font-size: 13px; color: var(--text-muted);">contact@zoheforge.com</p>
+            <p style="font-size: 13px; color: var(--text-muted);">contact@zohoforge.com</p>
           </div>
         </div>
-
         <div class="contact-row">
           <div class="contact-icon">
             <svg width="18" height="18"><use href="#icon-globe"/></svg>
@@ -1089,8 +1394,7 @@
           </div>
         </div>
       </div>
-
-      <div style="display: flex; align-items: center; justify-content: center; flex-direction: column; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 32px; text-align: center;">
+      <div class="reveal" style="display: flex; align-items: center; justify-content: center; flex-direction: column; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 32px; text-align: center;">
         <div style="width: 64px; height: 64px; border-radius: 50%; background: rgba(37,211,102,0.15); color: var(--whatsapp-color); display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
           <svg width="32" height="32" style="fill: currentColor;"><use href="#icon-whatsapp"/></svg>
         </div>
@@ -1105,7 +1409,6 @@
     </div>
   </div>
 </section>
-
 <!-- ════════════════ FOOTER ════════════════ -->
 <footer>
   <div class="footer-inner">
@@ -1116,23 +1419,106 @@
     <div>&copy; 2026 ZohoForge. All rights reserved. Registered in Saudi Arabia.</div>
   </div>
 </footer>
-
 <script>
-  // Mobile navigation drawer toggle logic
+  // ── Mobile navigation drawer toggle ──
   const hamburger = document.getElementById('hamburger');
   const navMobile = document.getElementById('nav-mobile');
-
-  hamburger.addEventListener('click', () => {
-    navMobile.classList.toggle('open');
-  });
-
-  // Access support
+  hamburger.addEventListener('click', () => navMobile.classList.toggle('open'));
   hamburger.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter' || e.key === ' ') {
-      navMobile.classList.toggle('open');
-    }
+    if (e.key === 'Enter' || e.key === ' ') navMobile.classList.toggle('open');
   });
-</script>
 
+  // ── Sticky nav shadow on scroll ──
+  const siteNav = document.getElementById('site-nav');
+  window.addEventListener('scroll', () => {
+    siteNav.classList.toggle('scrolled', window.scrollY > 12);
+  }, { passive: true });
+
+  // ── Scroll-triggered reveal animations ──
+  const revealEls = document.querySelectorAll('.reveal');
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  revealEls.forEach((el, i) => {
+    el.style.transitionDelay = (Math.min(i % 6, 5) * 70) + 'ms';
+    revealObserver.observe(el);
+  });
+
+  // ── Animated stat counters (e.g. 50+, 100%) ──
+  function animateCounter(el) {
+    const target = parseFloat(el.dataset.counter);
+    const suffix = el.dataset.suffix || '';
+    const duration = 1400;
+    const start = performance.now();
+    function tick(now) {
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = Math.round(target * eased) + suffix;
+      if (progress < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+  const counterEls = document.querySelectorAll('[data-counter]');
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        animateCounter(entry.target);
+        counterObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+  counterEls.forEach((el) => counterObserver.observe(el));
+
+  // ── Animated progress bars inside product preview widgets ──
+  const fillEls = document.querySelectorAll('.preview-fill[data-fill]');
+  const fillObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.style.width = entry.target.dataset.fill + '%';
+        fillObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.4 });
+  fillEls.forEach((el) => fillObserver.observe(el));
+
+  // ── Button ripple effect ──
+  document.querySelectorAll('.btn, .btn-hero-primary, .btn-hero-outline').forEach((btn) => {
+    btn.addEventListener('click', function (e) {
+      const rect = this.getBoundingClientRect();
+      const size = Math.max(rect.width, rect.height) * 1.4;
+      const ripple = document.createElement('span');
+      ripple.style.cssText = [
+        'position:absolute', 'border-radius:50%', 'pointer-events:none',
+        'background:rgba(255,255,255,.5)',
+        'width:' + size + 'px', 'height:' + size + 'px',
+        'left:' + (e.clientX - rect.left - size / 2) + 'px',
+        'top:' + (e.clientY - rect.top - size / 2) + 'px',
+        'animation:rippleAnim .6s ease-out', 'z-index:0'
+      ].join(';');
+      this.appendChild(ripple);
+      setTimeout(() => ripple.remove(), 650);
+    });
+  });
+
+  // ── Subtle 3D parallax tilt on the hero ecosystem visual (pointer devices only) ──
+  const orbitWrap = document.getElementById('orbit-wrap');
+  if (orbitWrap && window.matchMedia('(pointer:fine)').matches && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const heroSection = document.querySelector('.hero');
+    heroSection.addEventListener('mousemove', (e) => {
+      const r = orbitWrap.getBoundingClientRect();
+      const cx = r.left + r.width / 2, cy = r.top + r.height / 2;
+      const dx = (e.clientX - cx) / r.width, dy = (e.clientY - cy) / r.height;
+      orbitWrap.style.transform = `rotateX(${dy * -8}deg) rotateY(${dx * 8}deg)`;
+    });
+    heroSection.addEventListener('mouseleave', () => {
+      orbitWrap.style.transform = 'rotateX(0deg) rotateY(0deg)';
+    });
+  }
+</script>
 </body>
 </html>
